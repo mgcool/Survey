@@ -40,6 +40,84 @@
                                                                     </div>
                                                                 </td>
                                                             </tr>
+                                                            <tr>
+                                                                <td>
+                                                                    <div class="fieldcontain ${hasErrors(bean: surveyManifiestoInstance, field: 'semVacLaboralPar1', 'error')} ">
+                                                                        <label for="semVacLaboralPar1">
+                                                                                <g:message code="surveyManifiesto.semVacLaboralPar1.label" default="Sem Vac Laboral Par1" />
+
+                                                                        </label>
+                                                                        <g:field name="semVacLaboralPar1" type="number" value="${surveyManifiestoInstance.semVacLaboralPar1}"/>                                                                 
+                                                                    </div>
+                                                                </td>
+                                                            
+                                                            
+                                                                <td>
+                                                                    <div class="fieldcontain ${hasErrors(bean: surveyManifiestoInstance, field: 'semVacLaboralPar2', 'error')} ">
+                                                                            <label for="semVacLaboralPar2">
+                                                                                    <g:message code="surveyManifiesto.semVacLaboralPar2.label" default="Sem Vac Laboral Par2" />
+
+                                                                            </label>
+                                                                            <g:field name="semVacLaboralPar2" type="number" value="${surveyManifiestoInstance.semVacLaboralPar2}"/>
+
+                                                                    </div>
+                                                                </td>
+                                                            
+                                                            
+                                                                <td>
+                                                                    <div class="fieldcontain ${hasErrors(bean: surveyManifiestoInstance, field: 'semVacFueraCasa', 'error')} ">
+                                                                            <label for="semVacFueraCasa">
+                                                                                    <g:message code="surveyManifiesto.semVacFueraCasa.label" default="Sem Vac Fuera Casa" />
+
+                                                                            </label>
+                                                                            <g:field name="semVacFueraCasa" type="number" value="${surveyManifiestoInstance.semVacFueraCasa}"/>
+
+                                                                    </div>
+                                                                </td>
+                                                           </tr>
+                                                            <tr>
+                                                                <td>
+                                                                    <div class="fieldcontain ${hasErrors(bean: surveyManifiestoInstance, field: 'unidadVacacionFueraCasa', 'error')} ">
+                                                                            <label for="unidadVacacionFueraCasa">
+                                                                                    <g:message code="surveyManifiesto.unidadVacacionFueraCasa.label" default="Unidad Vacacion Fuera Casa" />
+
+                                                                            </label>
+                                                                            <g:textField name="unidadVacacionFueraCasa" value="${surveyManifiestoInstance?.unidadVacacionFueraCasa}"/>
+
+                                                                    </div>
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>
+                                                                </td>
+                                                            </tr>
+                                                                                                                        <tr>
+                                                               
+
                                                         </tbody>
                                                </table>
                                       </div>    
@@ -48,41 +126,13 @@
 
 
 
-<div class="fieldcontain ${hasErrors(bean: surveyManifiestoInstance, field: 'semVacLaboralPar1', 'error')} ">
-	<label for="semVacLaboralPar1">
-		<g:message code="surveyManifiesto.semVacLaboralPar1.label" default="Sem Vac Laboral Par1" />
-		
-	</label>
-	<g:field name="semVacLaboralPar1" type="number" value="${surveyManifiestoInstance.semVacLaboralPar1}"/>
 
-</div>
 
-<div class="fieldcontain ${hasErrors(bean: surveyManifiestoInstance, field: 'semVacLaboralPar2', 'error')} ">
-	<label for="semVacLaboralPar2">
-		<g:message code="surveyManifiesto.semVacLaboralPar2.label" default="Sem Vac Laboral Par2" />
-		
-	</label>
-	<g:field name="semVacLaboralPar2" type="number" value="${surveyManifiestoInstance.semVacLaboralPar2}"/>
 
-</div>
 
-<div class="fieldcontain ${hasErrors(bean: surveyManifiestoInstance, field: 'semVacFueraCasa', 'error')} ">
-	<label for="semVacFueraCasa">
-		<g:message code="surveyManifiesto.semVacFueraCasa.label" default="Sem Vac Fuera Casa" />
-		
-	</label>
-	<g:field name="semVacFueraCasa" type="number" value="${surveyManifiestoInstance.semVacFueraCasa}"/>
 
-</div>
 
-<div class="fieldcontain ${hasErrors(bean: surveyManifiestoInstance, field: 'unidadVacacionFueraCasa', 'error')} ">
-	<label for="unidadVacacionFueraCasa">
-		<g:message code="surveyManifiesto.unidadVacacionFueraCasa.label" default="Unidad Vacacion Fuera Casa" />
-		
-	</label>
-	<g:textField name="unidadVacacionFueraCasa" value="${surveyManifiestoInstance?.unidadVacacionFueraCasa}"/>
 
-</div>
 
 <div class="fieldcontain ${hasErrors(bean: surveyManifiestoInstance, field: 'costoPromHospedajeVac', 'error')} ">
 	<label for="costoPromHospedajeVac">
