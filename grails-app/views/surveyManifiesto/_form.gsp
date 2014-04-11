@@ -241,7 +241,7 @@
 		<g:message code="surveyManifiesto.idacompan.label" default="Idacompan" />
 		<span class="required-indicator">*</span>
 	</label>
-	<g:select id="idacompan" name="idacompan.id" from="${survey.Acompan.list()}" optionKey="id" required="" value="${surveyManifiestoInstance?.idacompan?.id}" class="many-to-one"/>
+	<g:select multiple="multiple" id="idacompan" name="idacompan.id" from="${survey.Acompan.list()}" optionKey="id" required="" value="${surveyManifiestoInstance?.idacompan?.id+"-"+surveyManifiestoInstance?.idacompan?.desc_es}" class="many-to-one"/>
 
 </div>
 

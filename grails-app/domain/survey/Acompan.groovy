@@ -10,6 +10,10 @@ class Acompan {
 
 
     static constraints = {
-        
+    
     }
+     
+    
+        
+    
 }
