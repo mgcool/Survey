@@ -6,22 +6,36 @@
 		<meta name="layout" content="main">
 		<g:set var="entityName" value="${message(code: 'view_SurveyManifiesto.label', default: 'View_SurveyManifiesto')}" />
 		<title><g:message code="default.list.label" args="[entityName]" /></title>
+                                       
 	</head>
 	<body>
                             <div class="container">
                                 
                                      <div class="container" id="buscar">
-                                               <table class="table table-bordered"> 
+                                         <table class="table table-bordered" style="width: auto;"> 
                                                         <thead>
-                                                                <th style="background-color: #EEE;">
+                                                        <th style="background-color: #EEE;" colspan="5">
                                                                                 <strong>Aplicar filtros</strong>                                                                            
-                                                                 </th>   
+                                                                                <a class="btn pull-right btn-inverse">Mostrar/Ocultar</a>
+                                                        </th>   
                                                         </thead>   
                                                         <tbody>
                                                             <tr>
                                                                 <td>
+                                                                    <label><g:message code="idmanifiesto.label" default="ID Manifiesto" /></label>
+                                                                    <input type="text" name="idmanifiesto">
+                                                                </td>   
+                                                                <td>
                                                                     <label><g:message code="nombrepareja.label" default="Nombre Pareja" /></label>
                                                                     <input type="text" name="nombrepareja">
+                                                                </td>
+                                                                <td>
+                                                                    <label><g:message code="numeropareja.label" default="Número Pareja" /></label>
+                                                                    <input type="text" name="numero">
+                                                                </td>
+                                                                  <td>
+                                                                    <label><g:message code="fechamanifiesto.label" default="Fecha Manifiesto" /></label>
+                                                                    <input type="text" name="numero">
                                                                 </td>
                                                             </tr>
                                                         </tbody>
