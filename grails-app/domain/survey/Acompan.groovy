@@ -13,7 +13,9 @@ class Acompan {
     
     }
      
-    
+    String toString(){
+        "$id"+"  -  "+"$desc_es"
+    }
         
     
 }
