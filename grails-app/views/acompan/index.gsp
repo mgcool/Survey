@@ -26,8 +26,6 @@
 					
 						<g:sortableColumn property="desc_en" title="${message(code: 'acompan.desc_en.label', default: 'Descen')}" />
 					
-						<g:sortableColumn property="otro" title="${message(code: 'acompan.otro.label', default: 'Otro')}" />
-					
 						<g:sortableColumn property="desc_es" title="${message(code: 'acompan.desc_es.label', default: 'Desces')}" />
 					
 						<g:sortableColumn property="idTipo" title="${message(code: 'acompan.idTipo.label', default: 'Id Tipo')}" />
@@ -39,8 +37,6 @@
 					<tr class="${(i % 2) == 0 ? 'even' : 'odd'}">
 					
 						<td><g:link action="show" id="${acompanInstance.id}">${fieldValue(bean: acompanInstance, field: "desc_en")}</g:link></td>
-					
-						<td>${fieldValue(bean: acompanInstance, field: "otro")}</td>
 					
 						<td>${fieldValue(bean: acompanInstance, field: "desc_es")}</td>
 					

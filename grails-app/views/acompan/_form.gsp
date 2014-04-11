@@ -11,15 +11,6 @@
 
 </div>
 
-<div class="fieldcontain ${hasErrors(bean: acompanInstance, field: 'otro', 'error')} ">
-	<label for="otro">
-		<g:message code="acompan.otro.label" default="Otro" />
-		
-	</label>
-	<g:textField name="otro" value="${acompanInstance?.otro}"/>
-
-</div>
-
 <div class="fieldcontain ${hasErrors(bean: acompanInstance, field: 'desc_es', 'error')} ">
 	<label for="desc_es">
 		<g:message code="acompan.desc_es.label" default="Desces" />

@@ -32,15 +32,6 @@
 				</li>
 				</g:if>
 			
-				<g:if test="${acompanInstance?.otro}">
-				<li class="fieldcontain">
-					<span id="otro-label" class="property-label"><g:message code="acompan.otro.label" default="Otro" /></span>
-					
-						<span class="property-value" aria-labelledby="otro-label"><g:fieldValue bean="${acompanInstance}" field="otro"/></span>
-					
-				</li>
-				</g:if>
-			
 				<g:if test="${acompanInstance?.desc_es}">
 				<li class="fieldcontain">
 					<span id="desc_es-label" class="property-label"><g:message code="acompan.desc_es.label" default="Desces" /></span>
