@@ -1,24 +1,52 @@
 <%@ page import="survey.SurveyManifiesto" %>
 
+ <div class="container" id="form_survey">
+                                         <table class="table table-bordered" style="width: auto;"> 
+                                                        <thead>
+                                                        <th style="background-color: #EEE;" colspan="5">
+                                                                                <strong>Por favor llene los campos siguientes:</strong>                                                                            
+                                                                                
+                                                        </th>   
+                                                        </thead>   
+                                                        <tbody>
+                                                            <tr>
+                                                                <td>
+                                                                    <div class="fieldcontain ${hasErrors(bean: surveyManifiestoInstance, field: 'idacompan', 'error')} required">
+                                                                            <label for="idacompan">
+                                                                                    <g:message code="surveyManifiesto.idacompan.label" default="Viaja con:" />
+                                                                                    <span class="required-indicator">*</span>
+                                                                            </label>
+                                                                            <g:select multiple="multiple" id="idacompan" name="idacompan.id" from="${survey.Acompan.list()}" optionKey="id" required="" value="${surveyManifiestoInstance?.idacompan?.id+"-"+surveyManifiestoInstance?.idacompan?.desc_es}" class="many-to-one"/>
+
+                                                                    </div>
+                                                                </td>
+                                                                <td>
+                                                                    <div class="fieldcontain ${hasErrors(bean: surveyManifiestoInstance, field: 'numAcompan', 'error')} ">
+                                                                        <label for="numAcompan">
+                                                                            <g:message code="surveyManifiesto.numAcompan.label" default="Num Acompan" />                                                                            
+                                                                        </label>
+                                                                            <g:field name="numAcompan" type="number" value="${surveyManifiestoInstance.numAcompan}"/>
+
+                                                                    </div>
+                                                                </td>   
+                                                                <td>
+                                                                    <div class="fieldcontain ${hasErrors(bean: surveyManifiestoInstance, field: 'otroAcompan', 'error')} ">
+                                                                        <label for="otroAcompan">
+                                                                                <g:message code="surveyManifiesto.otroAcompan.label" default="Otro Acompan" />
+
+                                                                        </label>
+                                                                        <g:textField name="otroAcompan" value="${surveyManifiestoInstance?.otroAcompan}"/>
+
+                                                                    </div>
+                                                                </td>
+                                                            </tr>
+                                                        </tbody>
+                                               </table>
+                                      </div>    
 
 
-<div class="fieldcontain ${hasErrors(bean: surveyManifiestoInstance, field: 'otroAcompan', 'error')} ">
-	<label for="otroAcompan">
-		<g:message code="surveyManifiesto.otroAcompan.label" default="Otro Acompan" />
-		
-	</label>
-	<g:textField name="otroAcompan" value="${surveyManifiestoInstance?.otroAcompan}"/>
 
-</div>
 
-<div class="fieldcontain ${hasErrors(bean: surveyManifiestoInstance, field: 'numAcompan', 'error')} ">
-	<label for="numAcompan">
-		<g:message code="surveyManifiesto.numAcompan.label" default="Num Acompan" />
-		
-	</label>
-	<g:field name="numAcompan" type="number" value="${surveyManifiestoInstance.numAcompan}"/>
-
-</div>
 
 <div class="fieldcontain ${hasErrors(bean: surveyManifiestoInstance, field: 'semVacLaboralPar1', 'error')} ">
 	<label for="semVacLaboralPar1">
@@ -236,14 +264,7 @@
 
 </div>
 
-<div class="fieldcontain ${hasErrors(bean: surveyManifiestoInstance, field: 'idacompan', 'error')} required">
-	<label for="idacompan">
-		<g:message code="surveyManifiesto.idacompan.label" default="Idacompan" />
-		<span class="required-indicator">*</span>
-	</label>
-	<g:select multiple="multiple" id="idacompan" name="idacompan.id" from="${survey.Acompan.list()}" optionKey="id" required="" value="${surveyManifiestoInstance?.idacompan?.id+"-"+surveyManifiestoInstance?.idacompan?.desc_es}" class="many-to-one"/>
 
-</div>
 
 <div class="fieldcontain ${hasErrors(bean: surveyManifiestoInstance, field: 'idmanifiesto', 'error')} required">
 	<label for="idmanifiesto">
