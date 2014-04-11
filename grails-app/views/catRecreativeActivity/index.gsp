@@ -24,9 +24,9 @@
 			<thead>
 					<tr>
 					
-						<g:sortableColumn property="desc" title="${message(code: 'catRecreativeActivity.desc.label', default: 'Desc')}" />
+						<g:sortableColumn property="name_en" title="${message(code: 'catRecreativeActivity.name_en.label', default: 'Nameen')}" />
 					
-						<g:sortableColumn property="name" title="${message(code: 'catRecreativeActivity.name.label', default: 'Name')}" />
+						<g:sortableColumn property="name_es" title="${message(code: 'catRecreativeActivity.name_es.label', default: 'Namees')}" />
 					
 					</tr>
 				</thead>
@@ -34,9 +34,9 @@
 				<g:each in="${catRecreativeActivityInstanceList}" status="i" var="catRecreativeActivityInstance">
 					<tr class="${(i % 2) == 0 ? 'even' : 'odd'}">
 					
-						<td><g:link action="show" id="${catRecreativeActivityInstance.id}">${fieldValue(bean: catRecreativeActivityInstance, field: "desc")}</g:link></td>
+						<td><g:link action="show" id="${catRecreativeActivityInstance.id}">${fieldValue(bean: catRecreativeActivityInstance, field: "name_en")}</g:link></td>
 					
-						<td>${fieldValue(bean: catRecreativeActivityInstance, field: "name")}</td>
+						<td>${fieldValue(bean: catRecreativeActivityInstance, field: "name_es")}</td>
 					
 					</tr>
 				</g:each>

@@ -23,20 +23,20 @@
 			</g:if>
 			<ol class="property-list catRecreativeActivity">
 			
-				<g:if test="${catRecreativeActivityInstance?.desc}">
+				<g:if test="${catRecreativeActivityInstance?.name_en}">
 				<li class="fieldcontain">
-					<span id="desc-label" class="property-label"><g:message code="catRecreativeActivity.desc.label" default="Desc" /></span>
+					<span id="name_en-label" class="property-label"><g:message code="catRecreativeActivity.name_en.label" default="Nameen" /></span>
 					
-						<span class="property-value" aria-labelledby="desc-label"><g:fieldValue bean="${catRecreativeActivityInstance}" field="desc"/></span>
+						<span class="property-value" aria-labelledby="name_en-label"><g:fieldValue bean="${catRecreativeActivityInstance}" field="name_en"/></span>
 					
 				</li>
 				</g:if>
 			
-				<g:if test="${catRecreativeActivityInstance?.name}">
+				<g:if test="${catRecreativeActivityInstance?.name_es}">
 				<li class="fieldcontain">
-					<span id="name-label" class="property-label"><g:message code="catRecreativeActivity.name.label" default="Name" /></span>
+					<span id="name_es-label" class="property-label"><g:message code="catRecreativeActivity.name_es.label" default="Namees" /></span>
 					
-						<span class="property-value" aria-labelledby="name-label"><g:fieldValue bean="${catRecreativeActivityInstance}" field="name"/></span>
+						<span class="property-value" aria-labelledby="name_es-label"><g:fieldValue bean="${catRecreativeActivityInstance}" field="name_es"/></span>
 					
 				</li>
 				</g:if>

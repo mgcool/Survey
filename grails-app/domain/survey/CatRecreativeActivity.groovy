@@ -2,10 +2,10 @@ package survey
 
 class CatRecreativeActivity {
     
-    String name
-    String desc
+    String name_en
+    String name_es
     
     static constraints = {
-         desc(blank: true, nullable: true)
+
     }
 }

@@ -2,21 +2,21 @@
 
 
 
-<div class="fieldcontain ${hasErrors(bean: catRecreativeActivityInstance, field: 'desc', 'error')} ">
-	<label for="desc">
-		<g:message code="catRecreativeActivity.desc.label" default="Desc" />
+<div class="fieldcontain ${hasErrors(bean: catRecreativeActivityInstance, field: 'name_en', 'error')} ">
+	<label for="name_en">
+		<g:message code="catRecreativeActivity.name_en.label" default="Nameen" />
 		
 	</label>
-	<g:textField name="desc" value="${catRecreativeActivityInstance?.desc}"/>
+	<g:textField name="name_en" value="${catRecreativeActivityInstance?.name_en}"/>
 
 </div>
 
-<div class="fieldcontain ${hasErrors(bean: catRecreativeActivityInstance, field: 'name', 'error')} ">
-	<label for="name">
-		<g:message code="catRecreativeActivity.name.label" default="Name" />
+<div class="fieldcontain ${hasErrors(bean: catRecreativeActivityInstance, field: 'name_es', 'error')} ">
+	<label for="name_es">
+		<g:message code="catRecreativeActivity.name_es.label" default="Namees" />
 		
 	</label>
-	<g:textField name="name" value="${catRecreativeActivityInstance?.name}"/>
+	<g:textField name="name_es" value="${catRecreativeActivityInstance?.name_es}"/>
 
 </div>
 

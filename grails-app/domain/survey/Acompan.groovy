@@ -1,13 +1,15 @@
 package survey
 
-import survey.Survey
+import survey.SurveyManifiesto
 
 class Acompan {
     
     Integer idTipo
-    String  desc
+    String  desc_en
+    String  desc_es
     String  otro
     Integer num
+    SurveyManifiesto idsurvey
 
     static constraints = {
     }

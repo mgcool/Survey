@@ -23,11 +23,20 @@
 			</g:if>
 			<ol class="property-list acompan">
 			
-				<g:if test="${acompanInstance?.desc}">
+				<g:if test="${acompanInstance?.desc_en}">
 				<li class="fieldcontain">
-					<span id="desc-label" class="property-label"><g:message code="acompan.desc.label" default="Desc" /></span>
+					<span id="desc_en-label" class="property-label"><g:message code="acompan.desc_en.label" default="Descen" /></span>
 					
-						<span class="property-value" aria-labelledby="desc-label"><g:fieldValue bean="${acompanInstance}" field="desc"/></span>
+						<span class="property-value" aria-labelledby="desc_en-label"><g:fieldValue bean="${acompanInstance}" field="desc_en"/></span>
+					
+				</li>
+				</g:if>
+			
+				<g:if test="${acompanInstance?.desc_es}">
+				<li class="fieldcontain">
+					<span id="desc_es-label" class="property-label"><g:message code="acompan.desc_es.label" default="Desces" /></span>
+					
+						<span class="property-value" aria-labelledby="desc_es-label"><g:fieldValue bean="${acompanInstance}" field="desc_es"/></span>
 					
 				</li>
 				</g:if>
@@ -37,6 +46,15 @@
 					<span id="idTipo-label" class="property-label"><g:message code="acompan.idTipo.label" default="Id Tipo" /></span>
 					
 						<span class="property-value" aria-labelledby="idTipo-label"><g:fieldValue bean="${acompanInstance}" field="idTipo"/></span>
+					
+				</li>
+				</g:if>
+			
+				<g:if test="${acompanInstance?.idsurvey}">
+				<li class="fieldcontain">
+					<span id="idsurvey-label" class="property-label"><g:message code="acompan.idsurvey.label" default="Idsurvey" /></span>
+					
+						<span class="property-value" aria-labelledby="idsurvey-label"><g:link controller="surveyManifiesto" action="show" id="${acompanInstance?.idsurvey?.id}">${acompanInstance?.idsurvey?.encodeAsHTML()}</g:link></span>
 					
 				</li>
 				</g:if>

@@ -2,12 +2,21 @@
 
 
 
-<div class="fieldcontain ${hasErrors(bean: acompanInstance, field: 'desc', 'error')} ">
-	<label for="desc">
-		<g:message code="acompan.desc.label" default="Desc" />
+<div class="fieldcontain ${hasErrors(bean: acompanInstance, field: 'desc_en', 'error')} ">
+	<label for="desc_en">
+		<g:message code="acompan.desc_en.label" default="Descen" />
 		
 	</label>
-	<g:textField name="desc" value="${acompanInstance?.desc}"/>
+	<g:textField name="desc_en" value="${acompanInstance?.desc_en}"/>
+
+</div>
+
+<div class="fieldcontain ${hasErrors(bean: acompanInstance, field: 'desc_es', 'error')} ">
+	<label for="desc_es">
+		<g:message code="acompan.desc_es.label" default="Desces" />
+		
+	</label>
+	<g:textField name="desc_es" value="${acompanInstance?.desc_es}"/>
 
 </div>
 
@@ -17,6 +26,15 @@
 		<span class="required-indicator">*</span>
 	</label>
 	<g:field name="idTipo" type="number" value="${acompanInstance.idTipo}" required=""/>
+
+</div>
+
+<div class="fieldcontain ${hasErrors(bean: acompanInstance, field: 'idsurvey', 'error')} required">
+	<label for="idsurvey">
+		<g:message code="acompan.idsurvey.label" default="Idsurvey" />
+		<span class="required-indicator">*</span>
+	</label>
+	<g:select id="idsurvey" name="idsurvey.id" from="${survey.SurveyManifiesto.list()}" optionKey="id" required="" value="${acompanInstance?.idsurvey?.id}" class="many-to-one"/>
 
 </div>
 
