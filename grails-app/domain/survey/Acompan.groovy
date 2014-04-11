@@ -8,9 +8,11 @@ class Acompan {
     String  desc_en
     String  desc_es
     String  otro
-    Integer num
-    SurveyManifiesto idsurvey
+
 
     static constraints = {
+        desc_en(blank: true, nullable: true)
+        otro(blank: true, nullable: true)
+        
     }
 }

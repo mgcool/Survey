@@ -5,7 +5,7 @@
     <link rel="shortcut icon" href="${createLinkTo(dir:'images/BS',file:'favicon.ico')}">
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <meta name="author" content="achavez">
+    <meta name="author" content="achavez/mgarza">
 
     <!-- Hojas de Estilo (CSS) -->
     <link rel="stylesheet" href="${resource(dir: 'Bootstrap/css', file: 'bootstrap.css')}" type="text/css">

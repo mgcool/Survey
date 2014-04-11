@@ -32,6 +32,15 @@
 				</li>
 				</g:if>
 			
+				<g:if test="${acompanInstance?.otro}">
+				<li class="fieldcontain">
+					<span id="otro-label" class="property-label"><g:message code="acompan.otro.label" default="Otro" /></span>
+					
+						<span class="property-value" aria-labelledby="otro-label"><g:fieldValue bean="${acompanInstance}" field="otro"/></span>
+					
+				</li>
+				</g:if>
+			
 				<g:if test="${acompanInstance?.desc_es}">
 				<li class="fieldcontain">
 					<span id="desc_es-label" class="property-label"><g:message code="acompan.desc_es.label" default="Desces" /></span>
@@ -46,33 +55,6 @@
 					<span id="idTipo-label" class="property-label"><g:message code="acompan.idTipo.label" default="Id Tipo" /></span>
 					
 						<span class="property-value" aria-labelledby="idTipo-label"><g:fieldValue bean="${acompanInstance}" field="idTipo"/></span>
-					
-				</li>
-				</g:if>
-			
-				<g:if test="${acompanInstance?.idsurvey}">
-				<li class="fieldcontain">
-					<span id="idsurvey-label" class="property-label"><g:message code="acompan.idsurvey.label" default="Idsurvey" /></span>
-					
-						<span class="property-value" aria-labelledby="idsurvey-label"><g:link controller="surveyManifiesto" action="show" id="${acompanInstance?.idsurvey?.id}">${acompanInstance?.idsurvey?.encodeAsHTML()}</g:link></span>
-					
-				</li>
-				</g:if>
-			
-				<g:if test="${acompanInstance?.num}">
-				<li class="fieldcontain">
-					<span id="num-label" class="property-label"><g:message code="acompan.num.label" default="Num" /></span>
-					
-						<span class="property-value" aria-labelledby="num-label"><g:fieldValue bean="${acompanInstance}" field="num"/></span>
-					
-				</li>
-				</g:if>
-			
-				<g:if test="${acompanInstance?.otro}">
-				<li class="fieldcontain">
-					<span id="otro-label" class="property-label"><g:message code="acompan.otro.label" default="Otro" /></span>
-					
-						<span class="property-value" aria-labelledby="otro-label"><g:fieldValue bean="${acompanInstance}" field="otro"/></span>
 					
 				</li>
 				</g:if>

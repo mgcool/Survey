@@ -2,12 +2,21 @@
 
 
 
-<div class="fieldcontain ${hasErrors(bean: surveyManifiestoInstance, field: 'acompaniantes', 'error')} ">
-	<label for="acompaniantes">
-		<g:message code="surveyManifiesto.acompaniantes.label" default="Acompaniantes" />
+<div class="fieldcontain ${hasErrors(bean: surveyManifiestoInstance, field: 'otroAcompan', 'error')} ">
+	<label for="otroAcompan">
+		<g:message code="surveyManifiesto.otroAcompan.label" default="Otro Acompan" />
 		
 	</label>
-	<g:textField name="acompaniantes" value="${surveyManifiestoInstance?.acompaniantes}"/>
+	<g:textField name="otroAcompan" value="${surveyManifiestoInstance?.otroAcompan}"/>
+
+</div>
+
+<div class="fieldcontain ${hasErrors(bean: surveyManifiestoInstance, field: 'numAcompan', 'error')} ">
+	<label for="numAcompan">
+		<g:message code="surveyManifiesto.numAcompan.label" default="Num Acompan" />
+		
+	</label>
+	<g:field name="numAcompan" type="number" value="${surveyManifiestoInstance.numAcompan}"/>
 
 </div>
 
@@ -224,6 +233,15 @@
 		
 	</label>
 	<g:checkBox name="compro" value="${surveyManifiestoInstance?.compro}" />
+
+</div>
+
+<div class="fieldcontain ${hasErrors(bean: surveyManifiestoInstance, field: 'idacompan', 'error')} required">
+	<label for="idacompan">
+		<g:message code="surveyManifiesto.idacompan.label" default="Idacompan" />
+		<span class="required-indicator">*</span>
+	</label>
+	<g:select id="idacompan" name="idacompan.id" from="${survey.Acompan.list()}" optionKey="id" required="" value="${surveyManifiestoInstance?.idacompan?.id}" class="many-to-one"/>
 
 </div>
 
