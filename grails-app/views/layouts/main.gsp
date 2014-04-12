@@ -1,82 +1,30 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <title>Survey Manifiesto</title>
-    <link rel="shortcut icon" href="${createLinkTo(dir:'images/BS',file:'favicon.ico')}">
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <meta name="author" content="achavez/mgarza">
-
-    <!-- Hojas de Estilo (CSS) -->
-    <link rel="stylesheet" href="${resource(dir: 'Bootstrap/css', file: 'bootstrap.css')}" type="text/css">
-    <link rel="stylesheet" href="${resource(dir: 'Bootstrap/css', file: 'prettify.css')}" type="text/css">
-    <link rel="stylesheet" href="${resource(dir:'Bootstrap/css', file:'bootstrap-responsive.css')}" type="text/css">
-    <link rel="stylesheet" href="${resource(dir:'Bootstrap/css', file:'bootstrap-responsive.min.css')}" type="text/css">
-    <link rel="stylesheet" href="${resource(dir:'Bootstrap/css', file:'bootstrap-datetimepicker.min.css')}" type="text/css">
-    
-	<style type="text/css">
-      body {
-        padding-top: 40px;
-      }
-    </style>
-
-    <!--Javascript-->
-    <script src="${resource(dir: 'Bootstrap/js', file: 'jquery-1.11.0.min.js')}"></script>  
-    <script src="${resource(dir: 'Bootstrap/js', file: 'bootstrap.js')}"></script>        
-    <script src="${resource(dir: 'Bootstrap/js', file: 'prettify.js')}"></script>
-    <script src="${resource(dir: 'Bootstrap/js', file: 'bootstrap.min.js')}"></script>
-    <script src="${resource(dir: 'Bootstrap/js', file: 'modernizr-2.5.3.min.js')}"></script>
-    <script src="${resource(dir: 'Bootstrap/js', file: 'Dropdown.js')}"></script>
- 
-    
-    <g:layoutHead/>
- </head>
- <body>
-   <div class="container">
-    <a href="${createLink(uri: '/')}">
-                  <img src="${createLinkTo(dir:'images/BS',file:'HEADER.png')}" alt="Bienvenido" width="213" height="119">
-    </a>
-     <br>
-     <br>
-   </div>
-   <div class="container">
-   <div class="navbar">
-      <div class="navbar-inner">
-        <div class="container">
-          <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </a>
-          <a class="brand" href="${createLink(uri: '/')}">Survey Manifiesto</a>
-          <div class="nav-collapse">
-            <ul class="nav">
-                    <li class="dropdown">
-                        <a href="${createLink(controller:'View_SurveyManifiesto', action:'index')}">Manifiestos</a>  
-                    </li>
-                    <li class="dropdown">
-                      <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="icon-g-white icon-g-notes"></i> Catálogo <span class="caret"></span></a>
-                        <ul class="dropdown-menu">
-                         
-                          <li><a href="${createLink(controller:'Area', action:'list')}"> Areas</a></li>
-                          <li><a href="${createLink(controller:'Departamento', action:'list')}">Departamento</a></li>                          
-                          <li><a href="${createLink(controller:'Locacion', action:'list')}">Locación</a></li>
-                          <li><a href="${createLink(controller:'TipoUsuario', action:'list')}">Tipo Usuario</a></li>
-                          <li><a href="${createLink(controller:'Rol', action:'list')}">Roles</a></li>
-                          
-                          
-                        </ul> 
-                    </li>
-                    
-            </ul>
-          </div><!--/.nav-collapse -->
-        </div>
-        </div>
-      </div>
-    </div>
-   
-   <br>
-     <g:layoutBody/>
-      <g:javascript library="application"/> 
- </body>
+<!--[if lt IE 7 ]> <html lang="en" class="no-js ie6"> <![endif]-->
+<!--[if IE 7 ]>    <html lang="en" class="no-js ie7"> <![endif]-->
+<!--[if IE 8 ]>    <html lang="en" class="no-js ie8"> <![endif]-->
+<!--[if IE 9 ]>    <html lang="en" class="no-js ie9"> <![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!--> <html lang="en" class="no-js"><!--<![endif]-->
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<title><g:layoutTitle default="Grails"/></title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="shortcut icon" href="${resource(dir: 'images', file: 'favicon.ico')}" type="image/x-icon">
+		<link rel="apple-touch-icon" href="${resource(dir: 'images', file: 'apple-touch-icon.png')}">
+		<link rel="apple-touch-icon" sizes="114x114" href="${resource(dir: 'images', file: 'apple-touch-icon-retina.png')}">
+		<link rel="stylesheet" href="${resource(dir: 'css', file: 'main.css')}" type="text/css">
+		<link rel="stylesheet" href="${resource(dir: 'css', file: 'mobile.css')}" type="text/css">
+                                     <g:javascript library='jquery' />
+                                        
+                                     <g:layoutHead/>
+		<g:javascript library="application"/>		
+		<r:layoutResources />
+	</head>
+	<body>
+		<div id="grailsLogo" role="banner"><a href="http://grails.org"><img src="${resource(dir: 'images', file: 'grails_logo.png')}" alt="Grails"/></a></div>
+		<g:layoutBody/>
+		<div class="footer" role="contentinfo"></div>
+		<div id="spinner" class="spinner" style="display:none;"><g:message code="spinner.alt" default="Loading&hellip;"/></div>
+		<r:layoutResources />
+	</body>
 </html>
