@@ -1,7 +1,5 @@
 package survey
 
-
-
 import static org.springframework.http.HttpStatus.*
 import grails.transaction.Transactional
 
@@ -100,5 +98,42 @@ class View_SurveyManifiestoController {
             }
             '*'{ render status: NOT_FOUND }
         }
+    }
+    
+    def buscar(){
+
+         List view_SurveyManifiestoInstanceList =  View_SurveyManifiesto.createCriteria().list(max: 10, offset: 0){
+                  if(params.idmanifiesto){
+                            def idmanifiesto = Long.parseLong(params.idmanifiesto)
+                            eq("id", idmanifiesto)
+                  }
+                  if(params.nombrepareja){
+                            def nombrepareja =  params.nombrepareja.toUpperCase()
+                            like("nombrepareja", "%$nombrepareja%")
+                                      or{
+                                         like("nombrepareja1", "%$nombrepareja%")
+                                     }
+                                     or{
+                                         like("nombrepareja2", "%$nombrepareja%")
+                                     }
+                  }
+                  if(params.numero){
+                            def numeropareja = Integer.parseInt(params.numero)
+                            eq("numeropareja", numeropareja)
+                  }
+                  if(params.fechaman){
+                            def fechamanifiesto = Date.parse('dd/MM/yyyy', params.fechaman)
+                            eq("fechamanifiesto", fechamanifiesto)
+                  }
+                  if(params.hotel){
+                            def hotel = params.hotel.toUpperCase()
+                            like("hospedado", "%$hotel%")
+                  }
+                  if(params.numconfirmacion){
+                            eq("numeroconfirmacion", "$params.numconfirmacion")
+                  }
+         }
+         
+        render(template: "buscar", model: [view_SurveyManifiestoInstanceList: view_SurveyManifiestoInstanceList, view_SurveyManifiestoInstanceCount: view_SurveyManifiestoInstanceList.totalCount, params: params])
     }
 }

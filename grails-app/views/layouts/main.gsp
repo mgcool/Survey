@@ -13,6 +13,7 @@
     <link rel="stylesheet" href="${resource(dir:'Bootstrap/css', file:'bootstrap-responsive.css')}" type="text/css">
     <link rel="stylesheet" href="${resource(dir:'Bootstrap/css', file:'bootstrap-responsive.min.css')}" type="text/css">
     <link rel="stylesheet" href="${resource(dir:'Bootstrap/css', file:'bootstrap-datetimepicker.min.css')}" type="text/css">
+    <link rel="stylesheet" href="${resource(dir: 'Bootstrap/css', file: 'metallic.css')}" type="text/css">
     
 	<style type="text/css">
       body {
@@ -21,12 +22,13 @@
     </style>
 
     <!--Javascript-->
-    <script src="${resource(dir: 'Bootstrap/js', file: 'jquery-1.11.0.min.js')}"></script>  
-    <script src="${resource(dir: 'Bootstrap/js', file: 'bootstrap.js')}"></script>        
+    <script src="${resource(dir: 'Bootstrap/js', file: 'jquery-1.7.1.min.js')}"></script>  
+    <script src="${resource(dir: 'Bootstrap/js', file: 'bootstrap.js')}"></script>
     <script src="${resource(dir: 'Bootstrap/js', file: 'prettify.js')}"></script>
     <script src="${resource(dir: 'Bootstrap/js', file: 'bootstrap.min.js')}"></script>
     <script src="${resource(dir: 'Bootstrap/js', file: 'modernizr-2.5.3.min.js')}"></script>
     <script src="${resource(dir: 'Bootstrap/js', file: 'Dropdown.js')}"></script>
+    <script src="${resource(dir: 'Bootstrap/js', file: 'zebra_datepicker.js')}"></script>    
  
     
     <g:layoutHead/>

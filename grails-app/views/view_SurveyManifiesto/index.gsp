@@ -6,17 +6,26 @@
 		<meta name="layout" content="main">
 		<g:set var="entityName" value="${message(code: 'view_SurveyManifiesto.label', default: 'View_SurveyManifiesto')}" />
 		<title><g:message code="default.list.label" args="[entityName]" /></title>
+                
+                                     <script type="text/javascript">
+                                               $(document).ready(function() {
+                                                        $('#fechaman').Zebra_DatePicker({
+                                                                 format: 'd/m/Y'
+                                                         });
+                                               });
+                                     </script>
                                        
 	</head>
 	<body>
                             <div class="container">
                                 
                                      <div class="container" id="buscar">
+                                        <g:form action="buscar">
                                          <table class="table table-bordered" style="width: auto;"> 
                                                         <thead>
                                                         <th style="background-color: #EEE;" colspan="5">
                                                                                 <strong>Aplicar filtros</strong>                                                                            
-                                                                                <a class="btn pull-right btn-inverse">Mostrar/Ocultar</a>
+                                                                                <g:submitToRemote update="list-view_SurveyManifiesto" url="[action:'buscar']" value="Buscar"/>
                                                         </th>   
                                                         </thead>   
                                                         <tbody>
@@ -35,11 +44,20 @@
                                                                 </td>
                                                                   <td>
                                                                     <label><g:message code="fechamanifiesto.label" default="Fecha Manifiesto" /></label>
-                                                                    <input type="text" name="numero">
-                                                                </td>
+                                                                    <input type="text" id="fechaman" name="fechaman">
+                                                                  </td>
+                                                                  <td>
+                                                                    <label><g:message code="hotel.label" default="Hotel" /></label>
+                                                                    <input type="text" name="hotel">
+                                                                  </td>
+                                                                  <td>
+                                                                    <label><g:message code="numconfirmacion.label" default="Num. Confirmación" /></label>
+                                                                    <input type="text" name="numconfirmacion">
+                                                                  </td>
                                                             </tr>
                                                         </tbody>
                                                </table>
+                                           </g:form>    
                                       </div>    
 
 		<div id="list-view_SurveyManifiesto" class="content scaffold-list" role="main">
@@ -49,7 +67,7 @@
 				<div class="message" role="status">${flash.message}</div>
 			</g:if>
 			<table class="table table-bordered">
-			<thead>
+                                                                           <thead>
                                                                                              <tr style="background-color: #EEE;">
 					
 						<g:sortableColumn property="id" title="${message(code: 'view_SurveyManifiesto.id.label', default: 'ID Manifiesto')}" />
@@ -85,9 +103,7 @@
 						<td>${fieldValue(bean: view_SurveyManifiestoInstance, field: "hospedado")}</td>
                                                                                                                 
                                                                                                                 <td>${fieldValue(bean: view_SurveyManifiestoInstance, field: "horaentrada")}</td>
-                                                
-                                                                                                                
-					
+
 					</tr>
 				</g:each>
 				</tbody>
