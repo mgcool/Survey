@@ -50,33 +50,6 @@
 				</li>
 				</g:if>
 			
-				<g:if test="${acompanInstance?.idsurvey}">
-				<li class="fieldcontain">
-					<span id="idsurvey-label" class="property-label"><g:message code="acompan.idsurvey.label" default="Idsurvey" /></span>
-					
-						<span class="property-value" aria-labelledby="idsurvey-label"><g:link controller="surveyManifiesto" action="show" id="${acompanInstance?.idsurvey?.id}">${acompanInstance?.idsurvey?.encodeAsHTML()}</g:link></span>
-					
-				</li>
-				</g:if>
-			
-				<g:if test="${acompanInstance?.num}">
-				<li class="fieldcontain">
-					<span id="num-label" class="property-label"><g:message code="acompan.num.label" default="Num" /></span>
-					
-						<span class="property-value" aria-labelledby="num-label"><g:fieldValue bean="${acompanInstance}" field="num"/></span>
-					
-				</li>
-				</g:if>
-			
-				<g:if test="${acompanInstance?.otro}">
-				<li class="fieldcontain">
-					<span id="otro-label" class="property-label"><g:message code="acompan.otro.label" default="Otro" /></span>
-					
-						<span class="property-value" aria-labelledby="otro-label"><g:fieldValue bean="${acompanInstance}" field="otro"/></span>
-					
-				</li>
-				</g:if>
-			
 			</ol>
 			<g:form url="[resource:acompanInstance, action:'delete']" method="DELETE">
 				<fieldset class="buttons">

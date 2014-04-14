@@ -30,12 +30,6 @@
 					
 						<g:sortableColumn property="idTipo" title="${message(code: 'acompan.idTipo.label', default: 'Id Tipo')}" />
 					
-						<th><g:message code="acompan.idsurvey.label" default="Idsurvey" /></th>
-					
-						<g:sortableColumn property="num" title="${message(code: 'acompan.num.label', default: 'Num')}" />
-					
-						<g:sortableColumn property="otro" title="${message(code: 'acompan.otro.label', default: 'Otro')}" />
-					
 					</tr>
 				</thead>
 				<tbody>
@@ -47,12 +41,6 @@
 						<td>${fieldValue(bean: acompanInstance, field: "desc_es")}</td>
 					
 						<td>${fieldValue(bean: acompanInstance, field: "idTipo")}</td>
-					
-						<td>${fieldValue(bean: acompanInstance, field: "idsurvey")}</td>
-					
-						<td>${fieldValue(bean: acompanInstance, field: "num")}</td>
-					
-						<td>${fieldValue(bean: acompanInstance, field: "otro")}</td>
 					
 					</tr>
 				</g:each>

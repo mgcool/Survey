@@ -23,11 +23,20 @@
 			</g:if>
 			<ol class="property-list surveyManifiesto">
 			
-				<g:if test="${surveyManifiestoInstance?.acompaniantes}">
+				<g:if test="${surveyManifiestoInstance?.otroAcompan}">
 				<li class="fieldcontain">
-					<span id="acompaniantes-label" class="property-label"><g:message code="surveyManifiesto.acompaniantes.label" default="Acompaniantes" /></span>
+					<span id="otroAcompan-label" class="property-label"><g:message code="surveyManifiesto.otroAcompan.label" default="Otro Acompan" /></span>
 					
-						<span class="property-value" aria-labelledby="acompaniantes-label"><g:fieldValue bean="${surveyManifiestoInstance}" field="acompaniantes"/></span>
+						<span class="property-value" aria-labelledby="otroAcompan-label"><g:fieldValue bean="${surveyManifiestoInstance}" field="otroAcompan"/></span>
+					
+				</li>
+				</g:if>
+			
+				<g:if test="${surveyManifiestoInstance?.numAcompan}">
+				<li class="fieldcontain">
+					<span id="numAcompan-label" class="property-label"><g:message code="surveyManifiesto.numAcompan.label" default="Num Acompan" /></span>
+					
+						<span class="property-value" aria-labelledby="numAcompan-label"><g:fieldValue bean="${surveyManifiestoInstance}" field="numAcompan"/></span>
 					
 				</li>
 				</g:if>
@@ -244,6 +253,15 @@
 					<span id="compro-label" class="property-label"><g:message code="surveyManifiesto.compro.label" default="Compro" /></span>
 					
 						<span class="property-value" aria-labelledby="compro-label"><g:formatBoolean boolean="${surveyManifiestoInstance?.compro}" /></span>
+					
+				</li>
+				</g:if>
+			
+				<g:if test="${surveyManifiestoInstance?.acompaniantes}">
+				<li class="fieldcontain">
+					<span id="acompaniantes-label" class="property-label"><g:message code="surveyManifiesto.acompaniantes.label" default="acompaniantes" /></span>
+					
+						<span class="property-value" aria-labelledby="acompaniantes-label"><g:link controller="acompan" action="show" id="${surveyManifiestoInstance?.acompaniantes}">${surveyManifiestoInstance?.acompaniantes.encodeAsHTML()}</g:link></span>
 					
 				</li>
 				</g:if>

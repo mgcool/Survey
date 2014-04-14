@@ -5,7 +5,11 @@ class CatRecreativeActivity {
     String name_en
     String name_es
     
+    
     static constraints = {
 
+    }
+    String toString(){
+        "$id"+"  -  "+"$name_es"
     }
 }
