@@ -76,7 +76,8 @@ class View_SurveyManifiesto {
     Integer	idremoto
     Integer	idhotel
     Integer idsurvey
-       
+    
+    
     static mapping = {
         table 'SURVEYXMANIFIESTO'
         
