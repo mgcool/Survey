@@ -72,10 +72,7 @@
                                                                         </label>
                                                                         <g:field name="semVacLaboralPar1" type="number" value="${surveyManifiestoInstance.semVacLaboralPar1}"/>                                                                 
                                                                     </div>
-                                                                </td>
-                                                            
-                                                            
-                                                                <td>
+                                                                
                                                                     <div class="fieldcontain ${hasErrors(bean: surveyManifiestoInstance, field: 'semVacLaboralPar2', 'error')} ">
                                                                             <label for="semVacLaboralPar2">
                                                                                     <g:message code="surveyManifiesto.semVacLaboralPar2.label" default="Sem Vac Laboral Par2" />
@@ -96,6 +93,8 @@
                                                                             <g:field name="semVacFueraCasa" type="number" value="${surveyManifiestoInstance.semVacFueraCasa}"/>
 
                                                                     </div>
+                                                                </td>                                                                                                                        
+                                                                <td>
                                                                     <div class="fieldcontain ${hasErrors(bean: surveyManifiestoInstance, field: 'unidadVacacionFueraCasa', 'error')} ">
                                                                             <label for="unidadVacacionFueraCasa">
                                                                                     <g:message code="surveyManifiesto.unidadVacacionFueraCasa.label" default="Unidad Vacacion Fuera Casa" />
