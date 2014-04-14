@@ -655,7 +655,8 @@ textarea,
 select,
 .uneditable-input {
   display: inline-block;
-  width: 210px;
+  width: auto;
+
   height: 18px;
   padding: 4px;
   margin-bottom: 9px;

@@ -3,7 +3,7 @@ package survey
 import survey.SurveyManifiesto
 
 class Acompan {
-    static scaffold = true
+   
     Integer idTipo
     String  desc_en
     String  desc_es
