@@ -34,7 +34,11 @@
                                                                     
                                                         <thead>
                                                         <th style="background-color: #EEE;" colspan="10">
-                                                                                <strong>Por favor llene los campos siguientes:</strong>                                                                            
+                                                                                <strong>Por favor llene los campos siguientes:</strong> 
+                                                                                <g:each in="${survey.CatRecreativeActivity.list(sort: 'id', order: 'asc')}" var="statement" status="i">
+                                                                                    <g:checkBox name="statements" value="${CatRecreativeActivityInstance?.id}" checked="true" />
+                                                                                    <label for="statements">${CatRecreativeActivityInstance?.id}</label>
+                                                                                </g:each>
                                                                                     
                                                         </th>   
                                                         </thead>   
