@@ -4,12 +4,7 @@
 
  <div class="container" id="form_survey">
                                          <table class="table table-bordered" style="width: auto;"> 
-                                             <thead>
-                                                        <th style="background-color: #EEE;" colspan="10">
-                                                                                <strong> <g:message code="surveyManifiesto.fillSurvey.label" default="Por favor llene los campos siguientes:" /></strong>                                                                            
-                                                                                    
-                                                        </th>   
-                                             </thead> 
+                                             
                                              <tbody>
                                                     <div class="fieldcontain ${hasErrors(bean: surveyManifiestoInstance, field: 'idmanifiesto', 'error')} required">
                                                            <label for="idmanifiesto">
@@ -19,30 +14,33 @@
                                                            <g:field name="idmanifiesto" type="number" value="${surveyManifiestoInstance.idmanifiesto}" required=""/>
 
                                                    </div>
-                                             <td> 
-                                                <div class="fieldcontain ${hasErrors(bean: surveyManifiestoInstance, field: 'idsRecreativActiv', 'error')} required">
-                                                        <label for="idsRecreativActiv">
-                                                                <g:message code="surveyManifiesto.idsRecreativActiv.label" default="Activities:" />
-                                                                <span class="required-indicator">*</span>
-                                                        </label>
-                                                        <g:select multiple="multiple" id="idsRecreativActiv" name="idsRecreativActiv" from="${survey.CatRecreativeActivity.list()}" optionKey="id" optionValue="name_es" required="" value="${surveyManifiestoInstance?.idsRecreativActiv}" class="many-to-one"/>
-
-
-                                                </div>
                                              
-                                             </td>
-                                                                    
+                                         </tbody>
+                                             </table>
+                                                <table class="table table-bordered" style="width: 100%;">                  
                                                         <thead>
-                                                        <th style="background-color: #EEE;" colspan="10">
-                                                                                <strong>Por favor llene los campos siguientes:</strong> 
-                                                                                <g:each in="${survey.CatRecreativeActivity.list(sort: 'id', order: 'asc')}" var="statement" status="i">
-                                                                                    <g:checkBox name="statements" value="${CatRecreativeActivityInstance?.id}" checked="true" />
-                                                                                    <label for="statements">${CatRecreativeActivityInstance?.id}</label>
-                                                                                </g:each>
+                                                        <th style="background-color: #EEE;" colspan="5">
+                                                            <strong> <g:message code="surveyManifiesto.fillSurvey.label" default="Por favor llene los campos siguientes:" /></strong>
+                                                                                
                                                                                     
                                                         </th>   
                                                         </thead>   
-                                                        
+                                                            <tr>
+                                                                    <g:each in="${survey.CatRecreativeActivity.list(sort: 'name_es', order: 'asc')}" var="statement" status="i">
+                                                                        <g:if test = "${(i % 2) == 0}">
+                                                                            <!--tr class="${(i % 2) == 0 ? 'even' : 'odd'}"-->
+                                                                            <td>
+                                                                              
+                                                                        
+                                                                        </g:if>
+                                                                        <g:checkBox name="idsRecreativActiv" value="${statement.id}" checked="false" /><label for="statements">${statement.name_es}</label>        
+                                                                    </g:each>
+                                                                </td> 
+                                                                
+                                                            </tr>
+                                                </table>
+                                                <table class="table table-bordered" style="width: auto;"> 
+                                                        <tbody>
                                                             <tr>
                                                                 <td>
                                                                     <div class="fieldcontain ${hasErrors(bean: surveyManifiestoInstance, field: 'acompaniantes', 'error')} required">
