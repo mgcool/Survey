@@ -32,6 +32,7 @@ class SurveyManifiesto {
     String          porqueNo                // ¿por qué NO?
     
     static constraints = {
+        acompaniantes           (blank: true, nullable: true)
         otroAcompan           (blank: true, nullable: true)
         numAcompan           (blank: true, nullable: true)
         semVacLaboralPar1       (blank: true, nullable: true)

@@ -27,10 +27,10 @@
                            </thead> 
                            <tr>
                                <td>
-                                   <div class="fieldcontain ${hasErrors(bean: surveyManifiestoInstance, field: 'acompaniantes', 'error')} required">
+                                   <!--div class="fieldcontain ${hasErrors(bean: surveyManifiestoInstance, field: 'acompaniantes', 'error')} required"-->
                                            <label for="acompaniantes">
                                                    <g:message code="surveyManifiesto.acompaniantes.label" default="Viaja con:" />
-                                                   <span class="required-indicator">*</span>
+                                                   <!--span class="required-indicator">*</span-->
                                            </label>
                                            <!--g:select multiple="multiple" id="acompaniantes" name="acompaniantes" from="${survey.Acompan.list()}" optionKey="id" optionValue="desc_es" required="" value="${surveyManifiestoInstance?.acompaniantes}" class="many-to-one"/-->
                                            <tr>
@@ -42,7 +42,7 @@
                                                      
                                             </tr>        
 
-                                   </div>
+                                   <!--/div-->
 
                                </td>
                                <td>
