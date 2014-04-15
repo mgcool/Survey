@@ -4,7 +4,14 @@
 		<meta name="layout" content="main">
 		<g:set var="entityName" value="${message(code: 'surveyManifiesto.label', default: 'SurveyManifiesto')}" />
 		<title><g:message code="default.create.label" args="[entityName]" /></title>
-	</head>
+	 <script type="text/javascript">
+                                               $(document).ready(function() {
+                                                        $('#ultimoShowVentas').Zebra_DatePicker({
+                                                                 format: 'd/m/Y'
+                                                         });
+                                               });
+        </script>
+        </head>
 	<body>
 		<a href="#create-surveyManifiesto" class="skip" tabindex="-1"><g:message code="default.link.skip.label" default="Skip to content&hellip;"/></a>
 		<div class="nav" role="navigation">

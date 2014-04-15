@@ -4,30 +4,41 @@
 
  <div class="container" id="form_survey">
                                          <table class="table table-bordered" style="width: auto;"> 
-                                             <div class="fieldcontain ${hasErrors(bean: surveyManifiestoInstance, field: 'idmanifiesto', 'error')} required">
-                                                    <label for="idmanifiesto">
-                                                            <g:message code="surveyManifiesto.idmanifiesto.label" default="Idmanifiesto" />
-                                                            <span class="required-indicator">*</span>
-                                                    </label>
-                                                    <g:field name="idmanifiesto" type="number" value="${surveyManifiestoInstance.idmanifiesto}" required=""/>
+                                             <thead>
+                                                        <th style="background-color: #EEE;" colspan="10">
+                                                                                <strong> <g:message code="surveyManifiesto.fillSurvey.label" default="Por favor llene los campos siguientes:" /></strong>                                                                            
+                                                                                    
+                                                        </th>   
+                                             </thead> 
+                                             <tbody>
+                                                    <div class="fieldcontain ${hasErrors(bean: surveyManifiestoInstance, field: 'idmanifiesto', 'error')} required">
+                                                           <label for="idmanifiesto">
+                                                                   <g:message code="surveyManifiesto.idmanifiesto.label" default="Idmanifiesto" />
+                                                                   <span class="required-indicator">*</span>
+                                                           </label>
+                                                           <g:field name="idmanifiesto" type="number" value="${surveyManifiestoInstance.idmanifiesto}" required=""/>
 
-                                            </div>
-                                                                    <div class="fieldcontain ${hasErrors(bean: surveyManifiestoInstance, field: 'idsRecreativActiv', 'error')} required">
-                                                                            <label for="idsRecreativActiv">
-                                                                                    <g:message code="surveyManifiesto.idsRecreativActiv.label" default="Activities:" />
-                                                                                    <span class="required-indicator">*</span>
-                                                                            </label>
-                                                                            <g:select multiple="multiple" id="idsRecreativActiv" name="idsRecreativActiv" from="${survey.CatRecreativeActivity.list()}" optionKey="id" required="" value="${surveyManifiestoInstance?.idsRecreativActiv}" class="many-to-one"/>
-                                                                            
+                                                   </div>
+                                             <td> 
+                                                <div class="fieldcontain ${hasErrors(bean: surveyManifiestoInstance, field: 'idsRecreativActiv', 'error')} required">
+                                                        <label for="idsRecreativActiv">
+                                                                <g:message code="surveyManifiesto.idsRecreativActiv.label" default="Activities:" />
+                                                                <span class="required-indicator">*</span>
+                                                        </label>
+                                                        <g:select multiple="multiple" id="idsRecreativActiv" name="idsRecreativActiv" from="${survey.CatRecreativeActivity.list()}" optionKey="id" optionValue="name_es" required="" value="${surveyManifiestoInstance?.idsRecreativActiv}" class="many-to-one"/>
 
-                                                                    </div>
+
+                                                </div>
+                                             
+                                             </td>
+                                                                    
                                                         <thead>
                                                         <th style="background-color: #EEE;" colspan="10">
                                                                                 <strong>Por favor llene los campos siguientes:</strong>                                                                            
                                                                                     
                                                         </th>   
                                                         </thead>   
-                                                        <tbody>
+                                                        
                                                             <tr>
                                                                 <td>
                                                                     <div class="fieldcontain ${hasErrors(bean: surveyManifiestoInstance, field: 'acompaniantes', 'error')} required">
@@ -35,7 +46,7 @@
                                                                                     <g:message code="surveyManifiesto.acompaniantes.label" default="Viaja con:" />
                                                                                     <span class="required-indicator">*</span>
                                                                             </label>
-                                                                            <g:select multiple="multiple" id="acompaniantes" name="acompaniantes" from="${survey.Acompan.list()}" optionKey="id" required="" value="${surveyManifiestoInstance?.acompaniantes}" class="many-to-one"/>
+                                                                            <g:select multiple="multiple" id="acompaniantes" name="acompaniantes" from="${survey.Acompan.list()}" optionKey="id" optionValue="desc_es" required="" value="${surveyManifiestoInstance?.acompaniantes}" class="many-to-one"/>
 
                                                                     </div>
                                                                      
@@ -277,7 +288,7 @@
                                                                             <!--g:datePicker name="ultimoShowVentas" precision="day"  value="${surveyManifiestoInstance?.ultimoShowVentas}" default="none" noSelection="['': '']" /-->
                                                                             <!--g:datePicker name="ultimoShowVentas" value="${new Date()}" precision="day"  noSelection="['':'-Choose-']" relativeYears="[-2..7]"/-->
                                                                             
-                                                                            <g:datePicker name="ultimoShowVentas" value="${surveyManifiestoInstance?.ultimoShowVentas}" default="none"         precision="day"  noSelection="['':'-Choose-']" relativeYears="[-2..7]"/>
+                                                                            <input type="text" id="ultimoShowVentas" name="ultimoShowVentas" value="${surveyManifiestoInstance?.ultimoShowVentas}"/>
                                                                     </div>
                                                                 </td>
                                                                 <td>
