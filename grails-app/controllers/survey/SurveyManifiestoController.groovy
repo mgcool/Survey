@@ -29,12 +29,17 @@ class SurveyManifiestoController {
             notFound()
             return
         }
-
+        
+        //if (params.ultimoShowVentas){
+        //    params.ultimoShowVentas = Date.parse('dd/MM/yyyy', params.ultimoShowVentas)
+        //    println(params.ultimoShowVentas)
+        //}
+        
         if (surveyManifiestoInstance.hasErrors()) {
             respond surveyManifiestoInstance.errors, view:'create'
             return
         }
-
+        
         surveyManifiestoInstance.save flush:true
 
         request.withFormat {
@@ -56,7 +61,12 @@ class SurveyManifiestoController {
             notFound()
             return
         }
-
+        
+        //if (params.ultimoShowVentas){
+        //    params.ultimoShowVentas = Date.parse('dd/MM/yyyy', params.ultimoShowVentas)
+        //}
+        
+        
         if (surveyManifiestoInstance.hasErrors()) {
             respond surveyManifiestoInstance.errors, view:'edit'
             return

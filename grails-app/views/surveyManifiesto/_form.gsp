@@ -286,9 +286,9 @@
 
                                                                             </label>
                                                                             <!--g:datePicker name="ultimoShowVentas" precision="day"  value="${surveyManifiestoInstance?.ultimoShowVentas}" default="none" noSelection="['': '']" /-->
-                                                                            <!--g:datePicker name="ultimoShowVentas" value="${new Date()}" precision="day"  noSelection="['':'-Choose-']" relativeYears="[-2..7]"/-->
+                                                                            <g:datePicker name="ultimoShowVentas" value="${surveyManifiestoInstance?.ultimoShowVentas}" default="none" precision="day"  noSelection="['':'-Choose-']" relativeYears="[-2..7]"/>
                                                                             
-                                                                            <input type="text" id="ultimoShowVentas" name="ultimoShowVentas" value="${surveyManifiestoInstance?.ultimoShowVentas}"/>
+                                                                            <!--input type="text" id="ultimoShowVentas" name="ultimoShowVentas" value="${surveyManifiestoInstance?.ultimoShowVentas}"/-->
                                                                     </div>
                                                                 </td>
                                                                 <td>
