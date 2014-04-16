@@ -1,7 +1,6 @@
 <%@ page import="survey.View_SurveyManifiesto" %>
 
 
-
 <div class="fieldcontain ${hasErrors(bean: view_SurveyManifiestoInstance, field: 'numeroorigen', 'error')} ">
 	<label for="numeroorigen">
 		<g:message code="view_SurveyManifiesto.numeroorigen.label" default="Numeroorigen" />

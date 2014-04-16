@@ -14,6 +14,14 @@
                                                          });
                                                });
                                      </script>
+                                     <script type="text/javascript">
+                                                function popitup(url, w, h) {
+    var opciones= "toolbar=no, location=no, titlebar=no, directories=no, status=no, menubar=no, scrollbars=yes, resizable=no, width=" + w + ", height=" + h + ", top=350, left=400";
+    newwindow=window.open(url,'',opciones);
+    if (window.focus) {newwindow.focus()}
+    return false;
+}
+                                     </script>    
                                        
 	</head>
 	<body>
@@ -23,36 +31,37 @@
                                         <g:form action="buscar">
                                          <table class="table table-bordered" style="width: auto;"> 
                                                         <thead>
-                                                        <th style="background-color: #EEE;" colspan="5">
+                                                        <th style="background-color: #EEE;" colspan="6">
                                                                                 <strong>Aplicar filtros</strong>                                                                            
-                                                                                <g:submitToRemote update="list-view_SurveyManifiesto" url="[action:'buscar']" value="Buscar"/>
+                                                                                <!--<g:submitToRemote update="list-view_SurveyManifiesto" url="[action:'buscar']" value="Buscar"/>-->
+                                                                                <g:actionSubmit value="Buscar" action="buscar" />
                                                         </th>   
                                                         </thead>   
                                                         <tbody>
                                                             <tr>
                                                                 <td>
                                                                     <label><g:message code="idmanifiesto.label" default="ID Manifiesto" /></label>
-                                                                    <input type="text" name="idmanifiesto">
+                                                                    <input type="text" name="idmanifiesto" value="${session.idmanifiesto}">
                                                                 </td>   
                                                                 <td>
                                                                     <label><g:message code="nombrepareja.label" default="Nombre Pareja" /></label>
-                                                                    <input type="text" name="nombrepareja">
+                                                                    <input type="text" name="nombrepareja"  value="${session.nombrepareja}">
                                                                 </td>
                                                                 <td>
                                                                     <label><g:message code="numeropareja.label" default="Número Pareja" /></label>
-                                                                    <input type="text" name="numero">
+                                                                    <input type="text" name="numero" value="${session.numeropareja}">
                                                                 </td>
                                                                   <td>
                                                                     <label><g:message code="fechamanifiesto.label" default="Fecha Manifiesto" /></label>
-                                                                    <input type="text" id="fechaman" name="fechaman">
+                                                                    <input type="text" id="fechaman" name="fechaman" value="${session.fechamanifiesto}">
                                                                   </td>
                                                                   <td>
                                                                     <label><g:message code="hotel.label" default="Hotel" /></label>
-                                                                    <input type="text" name="hotel">
+                                                                    <input type="text" name="hotel" value="${session.hotel}">
                                                                   </td>
                                                                   <td>
                                                                     <label><g:message code="numconfirmacion.label" default="Num. Confirmación" /></label>
-                                                                    <input type="text" name="numconfirmacion">
+                                                                    <input type="text" name="numconfirmacion" value="${session.numconfirmacion}">
                                                                   </td>
                                                             </tr>
                                                         </tbody>
@@ -90,26 +99,26 @@
 				<g:each in="${view_SurveyManifiestoInstanceList}" status="i" var="view_SurveyManifiestoInstance">
 					<tr class="${(i % 2) == 0 ? 'even' : 'odd'}">
 					
-						<td><g:link action="show" id="${view_SurveyManifiestoInstance.id}">${fieldValue(bean: view_SurveyManifiestoInstance, field: "id")}</g:link></td>
+						<td><g:link controller="SurveyManifiesto" action="create" params="[idmanifiesto: view_SurveyManifiestoInstance?.id]" onclick="popitup(this.href, 830, 500); return false">${fieldValue(bean: view_SurveyManifiestoInstance, field: "id")}</g:link></td>
 					
-                                                                                                                <td>${fieldValue(bean: view_SurveyManifiestoInstance, field: "idsurvey")}</td>
+                                                                                                                <td>${view_SurveyManifiestoInstance.idsurvey}</td>
 					
-						<td>${fieldValue(bean: view_SurveyManifiestoInstance, field: "nombrepareja")}</td>
+						<td>${view_SurveyManifiestoInstance.nombrepareja}</td>
                                                 
-                                                                                                                <td>${fieldValue(bean: view_SurveyManifiestoInstance, field: "numeropareja")}</td>
+                                                                                                                <td>${view_SurveyManifiestoInstance.numeropareja}</td>
                                                                                                                 
                                                                                                                 <td><g:formatDate format="dd/MM/yyyy" date="${view_SurveyManifiestoInstance.fechamanifiesto}"/></td>
 					
-						<td>${fieldValue(bean: view_SurveyManifiestoInstance, field: "hospedado")}</td>
+						<td>${view_SurveyManifiestoInstance.hospedado}</td>
                                                                                                                 
-                                                                                                                <td>${fieldValue(bean: view_SurveyManifiestoInstance, field: "horaentrada")}</td>
+                                                                                                                <td>${view_SurveyManifiestoInstance.horaentrada}</td>
 
 					</tr>
 				</g:each>
 				</tbody>
 			</table>
 			<div class="pagination">
-				<g:paginate total="${view_SurveyManifiestoInstanceCount ?: 0}" />
+				<g:paginate total="${view_SurveyManifiestoInstanceCount}" params="${params}" />
 			</div>
 		</div>
                             </div>

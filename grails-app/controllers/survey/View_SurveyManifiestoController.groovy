@@ -5,7 +5,7 @@ import grails.transaction.Transactional
 
 @Transactional(readOnly = true)
 class View_SurveyManifiestoController {
-
+    
     static allowedMethods = [save: "POST", update: "PUT", delete: "DELETE"]
 
     def index(Integer max) {
@@ -100,40 +100,55 @@ class View_SurveyManifiestoController {
         }
     }
     
-    def buscar(){
+    def buscar(Integer max){
+        
+         params.max = Math.min(max ?: 10, 100)
 
-         List view_SurveyManifiestoInstanceList =  View_SurveyManifiesto.createCriteria().list(max: 10, offset: 0){
+         List view_SurveyManifiestoInstanceList =  View_SurveyManifiesto.createCriteria().list(max: params.max, offset: params.offset){
                   if(params.idmanifiesto){
                             def idmanifiesto = Long.parseLong(params.idmanifiesto)
                             eq("id", idmanifiesto)
+                            session.idmanifiesto = idmanifiesto
+                  }else{
+                            session.idmanifiesto = ''
                   }
                   if(params.nombrepareja){
                             def nombrepareja =  params.nombrepareja.toUpperCase()
                             like("nombrepareja", "%$nombrepareja%")
-                                      or{
-                                         like("nombrepareja1", "%$nombrepareja%")
-                                     }
-                                     or{
-                                         like("nombrepareja2", "%$nombrepareja%")
-                                     }
+                            session.nombrepareja = nombrepareja         
+                  }else{
+                            session.nombrepareja = ''
                   }
                   if(params.numero){
                             def numeropareja = Integer.parseInt(params.numero)
                             eq("numeropareja", numeropareja)
-                  }
+                            session.numeropareja = numeropareja
+                  }else{
+                            session.numeropareja = ''
+                  }  
                   if(params.fechaman){
                             def fechamanifiesto = Date.parse('dd/MM/yyyy', params.fechaman)
                             eq("fechamanifiesto", fechamanifiesto)
+                            session.fechamanifiesto = params.fechaman
+                  }else{
+                            session.fechamanifiesto = ''
                   }
                   if(params.hotel){
                             def hotel = params.hotel.toUpperCase()
                             like("hospedado", "%$hotel%")
+                            session.hotel = hotel
+                  }else{
+                            session.hotel = ''
                   }
                   if(params.numconfirmacion){
                             eq("numeroconfirmacion", "$params.numconfirmacion")
+                            session.numconfirmacion = params.numconfirmacion
+                  }
+                  else{
+                            session.numconfirmacion = ''
                   }
          }
          
-        render(template: "buscar", model: [view_SurveyManifiestoInstanceList: view_SurveyManifiestoInstanceList, view_SurveyManifiestoInstanceCount: view_SurveyManifiestoInstanceList.totalCount, params: params])
+        render(view: "index", model: [view_SurveyManifiestoInstanceList: view_SurveyManifiestoInstanceList, view_SurveyManifiestoInstanceCount: view_SurveyManifiestoInstanceList.totalCount, params: params])
     }
 }
