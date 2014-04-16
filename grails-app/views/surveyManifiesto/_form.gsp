@@ -294,11 +294,14 @@
                                                     <!--tr class="${(i % 2) == 0 ? 'even' : 'odd'}"-->
                                                     <td>
                                                 </g:if>
+                                                <g:if test =" ${statement.id} ">
+                                                    <g:field name="statsid" type="text" value="${statement.id}"/>
+                                                </g:if>
                                                 <g:checkBox name="idsRecreativActiv" value="${statement.id}" checked="false" /><label for="statements">${statement.name_es}</label>        
                                             </g:each>
                                                     </td> 
+                                                    <g:field name="idsRecreativActivLista" type="text" value="${RecreativActivLista}"/>
                                     </tr>
-                                    <g:if test = "">
                         </table>
                            
                         <table class="table table-bordered" style="width: 100%;">    
