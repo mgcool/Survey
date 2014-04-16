@@ -298,6 +298,7 @@
                                             </g:each>
                                                     </td> 
                                     </tr>
+                                    <g:if test = "">
                         </table>
                            
                         <table class="table table-bordered" style="width: 100%;">    

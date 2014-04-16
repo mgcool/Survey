@@ -106,7 +106,7 @@
                                                                                                                                     </g:link>
                                                                                                                           </g:if>
                                                                                                                           <g:else>
-                                                                                                                                    <g:link controller="SurveyManifiesto" action="edit" params="[idmanifiesto: view_SurveyManifiestoInstance?.id]" onclick="popitup(this.href, 830, 500); return false">
+                                                                                                                                    <g:link controller="SurveyManifiesto" action="edit" id="${view_SurveyManifiestoInstance?.idsurvey}" params="[idmanifiesto: view_SurveyManifiestoInstance?.id]" onclick="popitup(this.href, 830, 500); return false">
                                                                                                                                         ${fieldValue(bean: view_SurveyManifiestoInstance, field: "id")}
                                                                                                                                     </g:link>
                                                                                                                           </g:else>    
