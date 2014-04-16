@@ -53,13 +53,17 @@ class SurveyManifiestoController {
 
     def edit(SurveyManifiesto surveyManifiestoInstance) {
         
-        def List<String> listActivities  
-        
-        //Convirtiendo el string en un ArrayList con el metodo "split", separa los elementos por coma, espacios o zeros
-        listActivities = Arrays.asList(surveyManifiestoInstance.idsRecreativActiv.split("\\s*,\\s*")) 
-        println("Actividades Seleccionadas:"+listActivities)
-        
-        respond surveyManifiestoInstance, model:[RecreativActivLista: listActivities] 
+        if(surveyManifiestoInstance.idsRecreativActiv){
+            def List<String> listActivities          
+            //Convirtiendo el string en un ArrayList con el metodo "split", separa los elementos por coma, espacios o zeros
+            listActivities = Arrays.asList(surveyManifiestoInstance.idsRecreativActiv.split("\\s*,\\s*")) 
+            println("Actividades Seleccionadas:"+listActivities)
+            
+            respond surveyManifiestoInstance, model:[RecreativActivLista: listActivities] 
+        }else{
+            respond surveyManifiestoInstance
+    
+        }
     }
 
     @Transactional

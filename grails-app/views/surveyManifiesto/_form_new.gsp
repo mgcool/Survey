@@ -298,72 +298,10 @@
                                                     <g:checkBox name="idsRecreativActiv" value="${statement.id}" checked="false" /><label for="statements">${statement.name_es}</label>    
                                             </g:each>
                                                     </td> 
-                                                    <g:field name="idsRecreativActivLista" type="text" value="${RecreativActivLista}"/>
+                        
                                     </tr>
                         </table>
                         
-                        <table class="table table-bordered" style="width: 100%;">                  
-                                <thead>
-                                <th style="background-color: #EEE;" colspan="5">
-                                    <strong> <g:message code="surveyManifiesto.fillActivities.label" default="Por favor llene los campos siguientes:" /></strong>
-                                </th>   
-                                </thead>   
-                                    <tr>
-                                            <g:each in="${survey.CatRecreativeActivity.list(sort: 'name_es', order: 'asc')}" var="statement" status="i">
-                                                <g:if test = "${(i % 2) == 0}">
-                                                    <!--tr class="${(i % 2) == 0 ? 'even' : 'odd'}"-->
-                                                    <td>
-                                                </g:if>
-                                                    <g:each in="${RecreativActivLista}" var="seleccionado" status="j">
-                                                        <!--g:if test ="${j!=0}"-->
-                                                        <!--g:if test = "${(statement.id).toString().equals(RecreativActivLista[j]).toString() }" -->
-                                                        <g:if test="${ statement.id.toString() == RecreativActivLista[j].toString() }">    
-                                                            <!--g:field name="enif" type="text" value="${j}+${statement.id}=${RecreativActivLista[j]}"/-->
-                                                            <g:checkBox name="idsRecreativActiv" value="${statement.id}" checked="true" /><label for="statements">${statement.name_es}</label>
-                                                        </g:if>
-                                                        <g:else>
-                                                            <!--g:field name="enif" type="text" value="${j}+${statement.id}=${RecreativActivLista[j]}"/-->
-                                                            <g:checkBox name="idsRecreativActiv" value="${statement.id}" checked="false" /><label for="statements">${statement.name_es}</label>
-                                                        </g:else>
-                                                    </g:each>
-                                                        
-                                            </g:each>
-                                                    </td> 
-                                                    <g:field name="idsRecreativActivLista" type="text" value="${RecreativActivLista}"/>
-                                    </tr>
-                        </table>
-                        
-                        
-                           <table class="table table-bordered" style="width: 100%;">                  
-                                <thead>
-                                <th style="background-color: #EEE;" colspan="5">
-                                    <strong> <g:message code="surveyManifiesto.fillActivities.label" default="Por favor llene los campos siguientes:" /></strong>
-                                </th>   
-                                </thead>   
-                                    <tr>
-                                            <g:each in="${survey.CatRecreativeActivity.list(sort: 'name_es', order: 'asc')}" var="statement" status="i">
-                                                <g:if test = "${(i % 2) == 0}">
-                                                    <!--tr class="${(i % 2) == 0 ? 'even' : 'odd'}"-->
-                                                    <td>
-                                                </g:if>
-                                                    <g:each in="${RecreativActivLista}" var="seleccionado" status="j">
-                                                        <!--g:if test ="${j!=0}"-->
-                                                        <!--g:if test = "${(statement.id).toString().equals(RecreativActivLista[j]).toString() }" -->
-                                                        <g:if test="${ statement.id.toString() == RecreativActivLista[j].toString() }">    
-                                                            <!--g:field name="enif" type="text" value="${j}+${statement.id}=${RecreativActivLista[j]}"/-->
-                                                            <g:checkBox name="idsRecreativActiv" value="${statement.id}" checked="true" /><label for="statements">${statement.name_es}</label>
-                                                        </g:if>
-                                                        <g:else>
-                                                            <!--g:field name="enif" type="text" value="${j}+${statement.id}=${RecreativActivLista[j]}"/-->
-                                                            <g:checkBox name="idsRecreativActiv" value="${statement.id}" checked="false" /><label for="statements">${statement.name_es}</label>
-                                                        </g:else>
-                                                    </g:each>
-                                                        
-                                            </g:each>
-                                                    </td> 
-                                                    <g:field name="idsRecreativActivLista" type="text" value="${RecreativActivLista}"/>
-                                    </tr>
-                        </table>
                            
                         <table class="table table-bordered" style="width: 100%;">    
                            <tbody>
