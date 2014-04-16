@@ -99,7 +99,18 @@
 				<g:each in="${view_SurveyManifiestoInstanceList}" status="i" var="view_SurveyManifiestoInstance">
 					<tr class="${(i % 2) == 0 ? 'even' : 'odd'}">
 					
-						<td><g:link controller="SurveyManifiesto" action="create" params="[idmanifiesto: view_SurveyManifiestoInstance?.id]" onclick="popitup(this.href, 830, 500); return false">${fieldValue(bean: view_SurveyManifiestoInstance, field: "id")}</g:link></td>
+						<td>
+                                                                                                                          <g:if test="${view_SurveyManifiestoInstance?.idsurvey == null || view_SurveyManifiestoInstance?.idsurvey == ''}">
+                                                                                                                                    <g:link controller="SurveyManifiesto" action="create" params="[idmanifiesto: view_SurveyManifiestoInstance?.id]" onclick="popitup(this.href, 830, 500); return false">
+                                                                                                                                        ${fieldValue(bean: view_SurveyManifiestoInstance, field: "id")}
+                                                                                                                                    </g:link>
+                                                                                                                          </g:if>
+                                                                                                                          <g:else>
+                                                                                                                                    <g:link controller="SurveyManifiesto" action="edit" params="[idmanifiesto: view_SurveyManifiestoInstance?.id]" onclick="popitup(this.href, 830, 500); return false">
+                                                                                                                                        ${fieldValue(bean: view_SurveyManifiestoInstance, field: "id")}
+                                                                                                                                    </g:link>
+                                                                                                                          </g:else>    
+                                                                                                                </td>
 					
                                                                                                                 <td>${view_SurveyManifiestoInstance.idsurvey}</td>
 					
