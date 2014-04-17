@@ -4,14 +4,13 @@
 
  <div class="container" id="form_survey">
         <table class="table table-bordered" style="width: auto;"> 
-            <h1><g:message code="surveyManifiesto.surveyManifiesto.label" default="Vacation Survey" /></h1>
             <tbody>
                    <div class="fieldcontain ${hasErrors(bean: surveyManifiestoInstance, field: 'idmanifiesto', 'error')} required">
                           <label for="idmanifiesto">
                                   <g:message code="surveyManifiesto.idmanifiesto.label" default="Idmanifiesto" />
                                   <span class="required-indicator">*</span>
                           </label>
-                          <g:field name="idmanifiesto" type="number" value="${surveyManifiestoInstance.idmanifiesto}" required=""/>
+                          <g:field name="idmanifiesto" type="number" value="${surveyManifiestoInstance.idmanifiesto}" required="" readonly="true"/>
 
                   </div>
 
@@ -26,6 +25,12 @@
                                 </th>   
                            </thead> 
                                    <tr>
+                                       <td colspan="3"><label for="acompaniantes">
+                                                   <g:message code="surveyManifiesto.acompaniantes.label" default="Viaja con:" />
+                                                   <!--span class="required-indicator">*</span-->
+                                           </label>
+                                        </td>   
+                                       <tr>
                                             <g:each in="${survey.Acompan.list(sort: 'desc_es', order: 'asc')}" var="statement" status="i">
                                                 <g:if test = "${(i % 2) == 0}">
                                                     <td>
@@ -39,7 +44,7 @@
                                                     <g:checkBox name="acompaniantes" value="${statement.id}" checked="${checa}" /><label for="statements">${statement.desc_es}</label>    
                                             </g:each>
                                                     </td> 
-                                    </tr>
+                                        </tr>
                                <td>
                                    <div class="fieldcontain ${hasErrors(bean: surveyManifiestoInstance, field: 'numAcompan', 'error')} ">
                                        <label for="numAcompan">
@@ -49,7 +54,7 @@
 
                                    </div>
                                </td>   
-                               <td>
+                               <td colspan="2">
                                    <div class="fieldcontain ${hasErrors(bean: surveyManifiestoInstance, field: 'otroAcompan', 'error')} ">
                                        <label for="otroAcompan">
                                                <g:message code="surveyManifiesto.otroAcompan.label" default="Otro Acompan" />
@@ -59,6 +64,7 @@
 
                                    </div>
                                </td>
+
                            </tr>
 
                           
@@ -349,7 +355,7 @@
                                </td>
                            </tr>
                            <tr>
-                                <td>
+                                <td colspan="3">
                                     <div class="fieldcontain ${hasErrors(bean: surveyManifiestoInstance, field: 'opinion', 'error')} ">
                                            <label for="opinion">
                                                    <g:message code="surveyManifiesto.opinion.label" default="opinion" />

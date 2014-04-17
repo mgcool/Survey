@@ -34,46 +34,6 @@
     <g:layoutHead/>
  </head>
  <body>
-   <div class="container">
-    <a href="${createLink(uri: '/')}">
-                  <img src="${createLinkTo(dir:'images/BS',file:'HEADER.png')}" alt="Bienvenido" width="213" height="119">
-    </a>
-     <br>
-     <br>
-   </div>
-   <div class="container">
-   <div class="navbar">
-      <div class="navbar-inner">
-        <div class="container">
-          <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </a>
-          <a class="brand" href="${createLink(uri: '/')}">Survey Manifiesto</a>
-          <div class="nav-collapse">
-            <ul class="nav">
-                    <li class="dropdown">
-                        <a href="${createLink(controller:'View_SurveyManifiesto', action:'index')}">Manifiestos</a>  
-                    </li>
-                    <li class="dropdown">
-                      <a href="#" class="dropdown-toggle" data-toggle="dropdown">Catálogos <span class="caret"></span></a>
-                        <ul class="dropdown-menu">
-                         
-                          <li><a href="${createLink(controller:'Acompan', action:'index')}"> Acompañantes</a></li>
-                          <li><a href="${createLink(controller:'CatRecreativeActivity', action:'index')}">Actividades Recreativas</a></li>                          
-
-                        </ul> 
-                    </li>
-                    
-            </ul>
-          </div><!--/.nav-collapse -->
-        </div>
-        </div>
-      </div>
-    </div>
-   
-   <br>
      <g:layoutBody/>
  </body>
 </html>

@@ -33,7 +33,7 @@ class SurveyManifiesto {
     String          opinion                 // ¿Qué fue lo que más le impresionó o menos le gustó?
     
     static constraints = {
-        acompaniantes           (blank: true, nullable: true)
+        acompaniantes           (blank: false, nullable: false)
         otroAcompan           (blank: true, nullable: true)
         numAcompan           (blank: true, nullable: true)
         semVacLaboralPar1       (blank: true, nullable: true)
@@ -55,7 +55,7 @@ class SurveyManifiesto {
         costoSiguienteVac2      (blank: true, nullable: true)
         lugarSiguienteVac3      (blank: true, nullable: true)
         costoSiguienteVac3      (blank: true, nullable: true)
-        idsRecreativActiv       (blank: true, nullable: true)
+        idsRecreativActiv       (blank: false, nullable: false)
         ultimoShowVentas        (blank: true, nullable: true)
         lugarUltimoShow         (blank: true, nullable: true)
         porqueNo                (blank: true, nullable: true)

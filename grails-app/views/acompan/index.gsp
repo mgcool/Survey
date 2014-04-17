@@ -8,21 +8,17 @@
 		<title><g:message code="default.list.label" args="[entityName]" /></title>
 	</head>
 	<body>
-		<a href="#list-acompan" class="skip" tabindex="-1"><g:message code="default.link.skip.label" default="Skip to content&hellip;"/></a>
-		<div class="nav" role="navigation">
-			<ul>
-				<li><a class="home" href="${createLink(uri: '/')}"><g:message code="default.home.label"/></a></li>
-				<li><g:link class="create" action="create"><g:message code="default.new.label" args="[entityName]" /></g:link></li>
-			</ul>
-		</div>
+                            <div class="container">
+                                     <g:link class="btns pull-right btns-create" action="create"><g:message code="default.new.label" args="[entityName]" /></g:link>
+
 		<div id="list-acompan" class="content scaffold-list" role="main">
-			<h1><g:message code="default.list.label" args="[entityName]" /></h1>
+			<h1><g:message code="default.list.label" args="[entityName]" /></h1><br>
 			<g:if test="${flash.message}">
 				<div class="message" role="status">${flash.message}</div>
 			</g:if>
-			<table>
-			<thead>
-					<tr>
+			<table class="table table-bordered">
+                                                                           <thead>
+                                                                                             <tr style="background-color: #EEE;">
 					
 						<g:sortableColumn property="desc_en" title="${message(code: 'acompan.desc_en.label', default: 'Descen')}" />
 					
@@ -50,5 +46,6 @@
 				<g:paginate total="${acompanInstanceCount ?: 0}" />
 			</div>
 		</div>
-	</body>
+                            </div>
+                   </body>
 </html>

@@ -4,14 +4,13 @@
 
  <div class="container" id="form_survey">
         <table class="table table-bordered" style="width: auto;"> 
-            <h1><g:message code="surveyManifiesto.surveyManifiesto.label" default="Vacation Survey" /></h1>
             <tbody>
                    <div class="fieldcontain ${hasErrors(bean: surveyManifiestoInstance, field: 'idmanifiesto', 'error')} required">
                           <label for="idmanifiesto">
                                   <g:message code="surveyManifiesto.idmanifiesto.label" default="Idmanifiesto" />
                                   <span class="required-indicator">*</span>
                           </label>
-                          <g:field name="idmanifiesto" type="number" value="${surveyManifiestoInstance.idmanifiesto}" required=""/>
+                          <g:field name="idmanifiesto" type="number" value="${surveyManifiestoInstance.idmanifiesto}" required=""  readonly="true"/>
 
                   </div>
 
@@ -26,7 +25,7 @@
                                 </th>   
                            </thead> 
                            <tr>
-                               <td>
+                               <td colspan="3">
                                    <!--div class="fieldcontain ${hasErrors(bean: surveyManifiestoInstance, field: 'acompaniantes', 'error')} required"-->
                                            <label for="acompaniantes">
                                                    <g:message code="surveyManifiesto.acompaniantes.label" default="Viaja con:" />
@@ -56,7 +55,7 @@
 
                                    </div>
                                </td>   
-                               <td>
+                               <td colspan="2">
                                    <div class="fieldcontain ${hasErrors(bean: surveyManifiestoInstance, field: 'otroAcompan', 'error')} ">
                                        <label for="otroAcompan">
                                                <g:message code="surveyManifiesto.otroAcompan.label" default="Otro Acompan" />
@@ -354,7 +353,7 @@
                                </td>
                            </tr>
                            <tr>
-                                <td>
+                               <td colspan="3">
                                     <div class="fieldcontain ${hasErrors(bean: surveyManifiestoInstance, field: 'opinion', 'error')} ">
                                            <label for="opinion">
                                                    <g:message code="surveyManifiesto.opinion.label" default="opinion" />

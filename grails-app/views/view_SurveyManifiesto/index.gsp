@@ -51,6 +51,8 @@
                                                                     <label><g:message code="numeropareja.label" default="Número Pareja" /></label>
                                                                     <input type="text" name="numero" value="${session.numeropareja}">
                                                                 </td>
+                                                           </tr>
+                                                           <tr>
                                                                   <td>
                                                                     <label><g:message code="fechamanifiesto.label" default="Fecha Manifiesto" /></label>
                                                                     <input type="text" id="fechaman" name="fechaman" value="${session.fechamanifiesto}">
