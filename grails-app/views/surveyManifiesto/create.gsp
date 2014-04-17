@@ -4,13 +4,18 @@
 		<meta name="layout" content="main_survey">
 		<g:set var="entityName" value="${message(code: 'surveyManifiesto.label', default: 'SurveyManifiesto')}" />
 		<title><g:message code="default.create.label" args="[entityName]" /></title>
-	 <script type="text/javascript">
-                                               $(document).ready(function() {
-                                                        $('#ultimoShowVentas').Zebra_DatePicker({
-                                                                 format: 'd/m/Y'
-                                                         });
-                                               });
-        </script>
+                            
+                                      <script type="text/javascript">
+                                            function cerrar(){
+                                                        var ruta = window.opener.location.href
+                                                        alert(ruta)
+                                            if(window.close){
+                                                        window.close();                                            
+                                                        window.opener.location.replace(ruta)
+                                            }
+                                            window.opener.location.replace(ruta)
+                                            }
+                                      </script>
         </head>
 	<body>
                             <div class="container">
@@ -31,7 +36,7 @@
 					<g:render template="form_new"/>
 				</fieldset>
 				<fieldset class="buttons">
-					<g:submitButton name="create" class="save" value="${message(code: 'default.button.create.label', default: 'Create')}" />
+					<g:submitButton name="create" class="save" value="${message(code: 'default.button.create.label', default: 'Create')}"  onclick="cerrar()"/>
 				</fieldset>
 			</g:form>
 		</div>

@@ -5,6 +5,18 @@
 		<meta name="layout" content="main_survey">
 		<g:set var="entityName" value="${message(code: 'surveyManifiesto.label', default: 'SurveyManifiesto')}" />
 		<title><g:message code="default.edit.label" args="[entityName]" /></title>
+                                      
+                                      <script type="text/javascript">
+                                            function cerrar(){
+                                                        var ruta = window.opener.location.href
+                                                        alert(ruta)
+                                            if(window.close){
+                                                        window.close();                                            
+                                                        window.opener.location.replace(ruta)
+                                            }
+                                            window.opener.location.replace(ruta)
+                                            }
+                                      </script>
 	</head>
 	<body>
                             <div class="container">
@@ -26,7 +38,7 @@
 					<g:render template="form"/>
 				</fieldset>
 				<fieldset class="buttons">
-					<g:actionSubmit class="save" action="update" value="${message(code: 'default.button.update.label', default: 'Update')}" />
+					<g:actionSubmit class="save" action="update" value="${message(code: 'default.button.update.label', default: 'Update')}" onclick="cerrar()"/>
 				</fieldset>
 			</g:form>
 		</div>

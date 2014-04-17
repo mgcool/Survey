@@ -16,11 +16,13 @@
                                      </script>
                                      <script type="text/javascript">
                                                 function popitup(url, w, h) {
-    var opciones= "toolbar=no, location=no, titlebar=no, directories=no, status=no, menubar=no, scrollbars=yes, resizable=no, width=" + w + ", height=" + h + ", top=350, left=400";
-    newwindow=window.open(url,'',opciones);
-    if (window.focus) {newwindow.focus()}
-    return false;
-}
+                                                        var opciones= "toolbar=no, location=no, titlebar=no, directories=no, status=no, menubar=no, scrollbars=yes, resizable=no, width=" + w + ", height=" + h + ", top=350, left=400";
+                                                        newwindow=window.open(url,'',opciones);
+                                                        if (window.focus) {
+                                                                  newwindow.focus()
+                                                        }
+                                                        return false;
+                                               }
                                      </script>    
                                        
 	</head>
@@ -34,7 +36,7 @@
                                                         <th style="background-color: #EEE;" colspan="6">
                                                                                 <strong>Aplicar filtros</strong>                                                                            
                                                                                 <!--<g:submitToRemote update="list-view_SurveyManifiesto" url="[action:'buscar']" value="Buscar"/>-->
-                                                                                <g:actionSubmit value="Buscar" action="buscar" />
+                                                                                <g:actionSubmit value="Buscar" action="index" />
                                                         </th>   
                                                         </thead>   
                                                         <tbody>
@@ -92,6 +94,8 @@
 						<g:sortableColumn property="fechamanifiesto" title="${message(code: 'view_SurveyManifiesto.numpersonas.label', default: 'Fecha Manifiesto')}" />
 					
 						<g:sortableColumn property="hospedado" title="${message(code: 'view_SurveyManifiesto.hospedado.label', default: 'Hospedado')}" />
+                                                
+                                                                                                                <g:sortableColumn property="numeroconfirmacion" title="${message(code: 'view_SurveyManifiesto.numeroconfirmacion.label', default: 'Num. Confirmación')}" />
                                                                                                                     
                                                                                                                 <g:sortableColumn property="horaentrada" title="${message(code: 'view_SurveyManifiesto.horaentrada.label', default: 'Hora de Entrada')}" />
 					
@@ -123,6 +127,8 @@
                                                                                                                 <td><g:formatDate format="dd/MM/yyyy" date="${view_SurveyManifiestoInstance.fechamanifiesto}"/></td>
 					
 						<td>${view_SurveyManifiestoInstance.hospedado}</td>
+                                                
+                                                                                                                <td>${view_SurveyManifiestoInstance.numeroconfirmacion}</td>
                                                                                                                 
                                                                                                                 <td>${view_SurveyManifiestoInstance.horaentrada}</td>
 

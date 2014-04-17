@@ -8,10 +8,10 @@ class View_SurveyManifiestoController {
     
     static allowedMethods = [save: "POST", update: "PUT", delete: "DELETE"]
 
-    def index(Integer max) {
+    /*def index(Integer max) {
         params.max = Math.min(max ?: 10, 100)
         respond View_SurveyManifiesto.list(params), model:[view_SurveyManifiestoInstanceCount: View_SurveyManifiesto.count()]
-    }
+    }*/
 
     def show(View_SurveyManifiesto view_SurveyManifiestoInstance) {
         respond view_SurveyManifiestoInstance
@@ -100,9 +100,10 @@ class View_SurveyManifiestoController {
         }
     }
     
-    def buscar(Integer max){
+    def index(){
         
-         params.max = Math.min(max ?: 10, 100)
+         if (!params.max) params.max = 10
+         if (!params.offset) params.offset = 0
 
          List view_SurveyManifiestoInstanceList =  View_SurveyManifiesto.createCriteria().list(max: params.max, offset: params.offset){
                   if(params.idmanifiesto){
