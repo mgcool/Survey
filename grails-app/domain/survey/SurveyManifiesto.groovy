@@ -29,6 +29,7 @@ class SurveyManifiesto {
     Date            ultimoShowVentas        // fecha de ultima presentacion de propiedad vacacional
     String          lugarUltimoShow         // lugar de ultima presentacion de propiedad vacacional
     boolean         compro = false          // compro?
+    String          moneda                  // compro?
     String          porqueNo                // ¿por qué NO?
     String          opinion                 // ¿Qué fue lo que más le impresionó o menos le gustó?
     

@@ -5,15 +5,24 @@
  <div class="container" id="form_survey">
         <table class="table table-bordered" style="width: auto;"> 
             <tbody>
-                   <div class="fieldcontain ${hasErrors(bean: surveyManifiestoInstance, field: 'idmanifiesto', 'error')} required">
+                <div class="fieldcontain ${hasErrors(bean: surveyManifiestoInstance, field: 'idmanifiesto', 'error')} required">
+                <td style="background-color:'#EEE'">
+                   
                           <label for="idmanifiesto">
                                   <g:message code="surveyManifiesto.idmanifiesto.label" default="Idmanifiesto" />
                                   <span class="required-indicator">*</span>
                           </label>
                           <g:field name="idmanifiesto" type="number" value="${surveyManifiestoInstance.idmanifiesto}" required=""  readonly="true"/>
+                   </td>
+                   <td>
+                          <label for="unidadVacacionFueraCasa">
+                                    <g:message code="surveyManifiesto.moneda.label" default="Moneda" />
 
-                  </div>
-
+                            </label>
+                            <g:select name='moneda' from="['USD']" value="${surveyManifiestoInstance.moneda}" noSelection="${['':'MXN']}"/>
+                    </td>
+                   </div>
+               
             </tbody>
         </table>
                
@@ -50,9 +59,8 @@
                                    <div class="fieldcontain ${hasErrors(bean: surveyManifiestoInstance, field: 'numAcompan', 'error')} ">
                                        <label for="numAcompan">
                                            <g:message code="surveyManifiesto.numAcompan.label" default="Num Acompan" />                                                                            
-                                       </label>
-                                           <g:field name="numAcompan" type="number" value="${surveyManifiestoInstance.numAcompan}"/>
-
+                                       </label>                                           
+                                           <g:select name='numAcompan' from="${1..99}" value="${surveyManifiestoInstance.numAcompan}" noSelection="${['': message(code:'surveyManifiesto.select.label')]}"/>
                                    </div>
                                </td>   
                                <td colspan="2">
@@ -80,7 +88,7 @@
                                                <g:message code="surveyManifiesto.semVacLaboralPar1.label" default="Sem Vac Laboral Par1" />
 
                                        </label>
-                                       <g:field name="semVacLaboralPar1" type="number" value="${surveyManifiestoInstance.semVacLaboralPar1}"/>                                                                 
+                                       <g:select name='semVacLaboralPar1' from="${1..52}" value="${surveyManifiestoInstance.semVacLaboralPar1}" noSelection="${['': message(code:'surveyManifiesto.select.label')]}"/>
                                    </div>
 
                                    <div class="fieldcontain ${hasErrors(bean: surveyManifiestoInstance, field: 'semVacLaboralPar2', 'error')} ">
@@ -88,8 +96,7 @@
                                                    <g:message code="surveyManifiesto.semVacLaboralPar2.label" default="Sem Vac Laboral Par2" />
 
                                            </label>
-                                           <g:field name="semVacLaboralPar2" type="number" value="${surveyManifiestoInstance.semVacLaboralPar2}"/>
-
+                                           <g:select name='semVacLaboralPar2' from="${1..52}" value="${surveyManifiestoInstance.semVacLaboralPar2}" noSelection="${['': message(code:'surveyManifiesto.select.label')]}"/>
                                    </div>
                                </td>
 
@@ -100,8 +107,7 @@
                                                    <g:message code="surveyManifiesto.semVacFueraCasa.label" default="Sem Vac Fuera Casa" />
 
                                            </label>
-                                           <g:field name="semVacFueraCasa" type="number" value="${surveyManifiestoInstance.semVacFueraCasa}"/>
-
+                                           <g:select name='semVacFueraCasa' from="${1..52}" value="${surveyManifiestoInstance.semVacFueraCasa}" noSelection="${['': message(code:'surveyManifiesto.select.label')]}"/>
                                    </div>
                                </td>                                                                                                                        
                                <td>
@@ -110,12 +116,9 @@
                                                    <g:message code="surveyManifiesto.unidadVacacionFueraCasa.label" default="Unidad Vacacion Fuera Casa" />
 
                                            </label>
-                                           <g:textField name="unidadVacacionFueraCasa" value="${surveyManifiestoInstance?.unidadVacacionFueraCasa}"/>
-
+                                           <g:select name='unidadVacacionFueraCasa' from="['Hotel','Condo']" value="${surveyManifiestoInstance.unidadVacacionFueraCasa}" noSelection="${['': message(code:'surveyManifiesto.select.label')]}"/>
                                    </div>
                                </td>
-
-
                           </tr>
                            <tr>
                                <td>
