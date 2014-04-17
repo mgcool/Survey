@@ -413,6 +413,18 @@
                                    </div>
                                </td>
                            </tr>
+                           <tr>
+                                <td>
+                                    <div class="fieldcontain ${hasErrors(bean: surveyManifiestoInstance, field: 'opinion', 'error')} ">
+                                           <label for="opinion">
+                                                   <g:message code="surveyManifiesto.opinion.label" default="opinion" />
+
+                                           </label>
+                                           <g:textField name="opinion" value="${surveyManifiestoInstance?.opinion}"/>
+
+                                   </div>
+                                </td>
+                           </tr>
 
                        </tbody>
               </table>

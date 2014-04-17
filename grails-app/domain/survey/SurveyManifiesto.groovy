@@ -30,6 +30,7 @@ class SurveyManifiesto {
     String          lugarUltimoShow         // lugar de ultima presentacion de propiedad vacacional
     boolean         compro = false          // compro?
     String          porqueNo                // ¿por qué NO?
+    String          opinion                 // ¿Qué fue lo que más le impresionó o menos le gustó?
     
     static constraints = {
         acompaniantes           (blank: true, nullable: true)
@@ -58,5 +59,6 @@ class SurveyManifiesto {
         ultimoShowVentas        (blank: true, nullable: true)
         lugarUltimoShow         (blank: true, nullable: true)
         porqueNo                (blank: true, nullable: true)
+        opinion                (blank: true, nullable: true)
     }
 }
