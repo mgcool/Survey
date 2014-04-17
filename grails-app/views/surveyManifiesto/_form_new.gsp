@@ -35,11 +35,13 @@
                                            <!--g:select multiple="multiple" id="acompaniantes" name="acompaniantes" from="${survey.Acompan.list()}" optionKey="id" optionValue="desc_es" required="" value="${surveyManifiestoInstance?.acompaniantes}" class="many-to-one"/-->
                                            <tr>
                                             <g:each in="${survey.Acompan.list(sort: 'desc_es', order: 'asc')}" var="statement" status="i">
-                                                   <td>
+                                                  <g:if test = "${(i % 2) == 0}">
+                                                    <td>
+                                                </g:if>
                                                 <g:checkBox name="acompaniantes" value="${statement.id}" checked="false" /><label for="statements">${statement.desc_es}</label>        
-                                                    </td>
+                                                    
                                             </g:each>
-                                                     
+                                                </td>     
                                             </tr>        
 
                                    <!--/div-->
@@ -289,7 +291,7 @@
                                 </th>   
                                 </thead>   
                                     <tr>
-                                            <g:each in="${survey.CatRecreativeActivity.list(sort: 'name_es', order: 'asc')}" var="statement" status="i">
+                                            <g:each in="${survey.CatRecreativeActivity.list(sort: 'id', order: 'asc')}" var="statement" status="i">
                                                 <g:if test = "${(i % 2) == 0}">
                                                     <!--tr class="${(i % 2) == 0 ? 'even' : 'odd'}"-->
                                                     <td>

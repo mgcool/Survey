@@ -64,6 +64,18 @@ class SurveyManifiestoController {
             respond surveyManifiestoInstance
     
         }
+        
+        if(surveyManifiestoInstance.acompaniantes){
+            def List<String> listAcompan         
+            //Convirtiendo el string en un ArrayList con el metodo "split", separa los elementos por coma, espacios o zeros
+            listAcompan = Arrays.asList(surveyManifiestoInstance.acompaniantes.split("\\s*,\\s*")) 
+            println("Acompaniantes Seleccionadas:"+listAcompan)
+            
+            respond surveyManifiestoInstance, model:[AcompanLista: listAcompan] 
+        }else{
+            respond surveyManifiestoInstance
+    
+        }
     }
 
     @Transactional
