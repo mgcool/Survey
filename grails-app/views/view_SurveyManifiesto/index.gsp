@@ -29,14 +29,14 @@
 	<body>
                             <div class="container">
                                 
-                                     <div class="container" id="buscar">
-                                        <g:form action="buscar">
+                                     <div class="container">
+                                        <g:form action="index">
                                          <table class="table table-bordered" style="width: auto;"> 
                                                         <thead>
                                                         <th style="background-color: #EEE;" colspan="6">
                                                                                 <strong>Aplicar filtros</strong>                                                                            
                                                                                 <!--<g:submitToRemote update="list-view_SurveyManifiesto" url="[action:'buscar']" value="Buscar"/>-->
-                                                                                <g:actionSubmit value="Buscar" action="index" />
+                                                                                <g:actionSubmit class="btns pull-right btns-search" value="Buscar" action="index" params="params" />
                                                         </th>   
                                                         </thead>   
                                                         <tbody>

@@ -16,40 +16,30 @@ class SurveyManifiestoController {
     }
 
     def show(SurveyManifiesto surveyManifiestoInstance) {
-        respond surveyManifiestoInstance
+        if(surveyManifiestoInstance.idsRecreativActiv){
+            def List<String> listActivities          
+            listActivities = Arrays.asList(surveyManifiestoInstance.idsRecreativActiv.split("\\s*,\\s*")) 
+            respond surveyManifiestoInstance, model:[RecreativActivLista: listActivities] 
+        }else{
+            respond surveyManifiestoInstance
+    
+        }
+        
+        if(surveyManifiestoInstance.acompaniantes){
+            def List<String> listAcompan         
+            listAcompan = Arrays.asList(surveyManifiestoInstance.acompaniantes.split("\\s*,\\s*")) 
+            respond surveyManifiestoInstance, model:[AcompanLista: listAcompan] 
+        }else{
+            respond surveyManifiestoInstance
+    
+        }
     }
 
     def create() {
         respond new SurveyManifiesto(params)
     }
 
-    @Transactional
-    def save(SurveyManifiesto surveyManifiestoInstance) {
-        if (surveyManifiestoInstance == null) {
-            notFound()
-            return
-        }
-        
-        //if (params.ultimoShowVentas){
-        //    params.ultimoShowVentas = Date.parse('dd/MM/yyyy', params.ultimoShowVentas)
-        //    println(params.ultimoShowVentas)
-        //}
-        
-        if (surveyManifiestoInstance.hasErrors()) {
-            respond surveyManifiestoInstance.errors, view:'create'
-            return
-        }
-        
-        surveyManifiestoInstance.save flush:true
-
-        request.withFormat {
-            form multipartForm {
-                flash.message = message(code: 'default.created.message', args: [message(code: 'surveyManifiestoInstance.label', default: 'SurveyManifiesto'), surveyManifiestoInstance.id])
-                redirect surveyManifiestoInstance
-            }
-            '*' { respond surveyManifiestoInstance, [status: CREATED] }
-        }
-    }
+   
 
     def edit(SurveyManifiesto surveyManifiestoInstance) {
         
@@ -75,6 +65,34 @@ class SurveyManifiestoController {
         }else{
             respond surveyManifiestoInstance
     
+        }
+    }
+    
+     @Transactional
+    def save(SurveyManifiesto surveyManifiestoInstance) {
+        if (surveyManifiestoInstance == null) {
+            notFound()
+            return
+        }
+        
+        //if (params.ultimoShowVentas){
+        //    params.ultimoShowVentas = Date.parse('dd/MM/yyyy', params.ultimoShowVentas)
+        //    println(params.ultimoShowVentas)
+        //}
+        
+        if (surveyManifiestoInstance.hasErrors()) {
+            respond surveyManifiestoInstance.errors, view:'create'
+            return
+        }
+        
+        surveyManifiestoInstance.save flush:true
+
+        request.withFormat {
+            form multipartForm {
+                flash.message = message(code: 'default.created.message', args: [message(code: 'surveyManifiestoInstance.label', default: 'SurveyManifiesto'), surveyManifiestoInstance.id])
+                redirect surveyManifiestoInstance
+            }
+            '*' { respond surveyManifiestoInstance, [status: CREATED] }
         }
     }
 

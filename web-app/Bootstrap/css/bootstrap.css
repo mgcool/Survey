@@ -2082,6 +2082,9 @@ table .span24 {
 .btns-search {
 	background-image: url(../img/zoom.png);
 }
+.btns-closewindow {
+	background-image: url(../img/close_window.png);
+}
 
 .delete, .edit, .save{
   display: inline-block;

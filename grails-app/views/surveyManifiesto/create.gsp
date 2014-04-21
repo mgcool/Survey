@@ -4,19 +4,7 @@
 		<meta name="layout" content="main_survey">
 		<g:set var="entityName" value="${message(code: 'surveyManifiesto.label', default: 'SurveyManifiesto')}" />
 		<title><g:message code="default.create.label" args="[entityName]" /></title>
-                            
-                                      <script type="text/javascript">
-                                            function cerrar(){
-                                                        var ruta = window.opener.location.href
-                                                        alert(ruta)
-                                            if(window.close){
-                                                        window.close();                                            
-                                                        window.opener.location.replace(ruta)
-                                            }
-                                            window.opener.location.replace(ruta)
-                                            }
-                                      </script>
-        </head>
+                    </head>
 	<body>
                             <div class="container">
 		<div id="create-surveyManifiesto" class="content scaffold-create" role="main">
@@ -36,7 +24,7 @@
 					<g:render template="form_new"/>
 				</fieldset>
 				<fieldset class="buttons">
-					<g:submitButton name="create" class="save" value="${message(code: 'default.button.create.label', default: 'Create')}"  onclick="cerrar()"/>
+					<g:submitButton name="create" class="save" value="${message(code: 'default.button.create.label', default: 'Create')}" />
 				</fieldset>
 			</g:form>
 		</div>

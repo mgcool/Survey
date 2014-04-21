@@ -19,7 +19,7 @@
                                     <g:message code="surveyManifiesto.moneda.label" default="Moneda" />
 
                             </label>
-                            <g:select name='moneda' from="['USD']" value="${surveyManifiestoInstance.moneda}" noSelection="${['':'MXN']}"/>
+                            <g:select name='moneda' from="['USD']" value="${surveyManifiestoInstance.moneda}" noSelection="${['MXN':'MXN']}"/>
                     </td>
                    </div>
                
