@@ -38,6 +38,14 @@
     <a href="${createLink(uri: '/')}">
                   <img src="${createLinkTo(dir:'images/BS',file:'HEADER.png')}" alt="Bienvenido" width="213" height="119">
     </a>
+    
+    <div class="pull-right">
+    <form method="get">
+        <g:select from="['en', 'es']" name="lang" value="${locale}"/>
+        <input type="submit" value="Change Lang."/>
+    </form>
+    </div>
+
      <br>
      <br>
    </div>

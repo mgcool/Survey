@@ -119,3 +119,6 @@ log4j = {
            'org.hibernate',
            'net.sf.ehcache.hibernate'
 }
+
+grails.plugins.localeConfiguration.supportedLocales = [new Locale('ru'), new Locale('uk'), Locale.ITALIAN, new Locale('es'), Locale.ENGLISH]
+grails.plugins.localeConfiguration.defaultLocale=Locale.ENGLISH
