@@ -30,7 +30,7 @@
                             <div class="container">
                                 
                                      <div class="container">
-                                        <g:form action="buscar">
+                                        <g:form action="buscar" method="GET">
                                          <table class="table table-bordered" style="width: auto;"> 
                                                         <thead>
                                                         <th style="background-color: #EEE;" colspan="6">
