@@ -41,8 +41,8 @@
     
     <div class="pull-right">
     <form method="get">
-        <g:select from="['en', 'es']" name="lang" value="${locale}"/>
-        <input type="submit" value="Change Lang."/>
+               <g:select from="['en', 'es']" name="lang" value="${session.locale}"/>
+                <input type="submit" value="Change Lang."/>
     </form>
     </div>
 
