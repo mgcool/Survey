@@ -1,7 +1,5 @@
 <%@ page import="survey.SurveyManifiesto" %>
 
-
-
  <div class="container" id="form_survey">
         <table class="table table-bordered" style="width: auto;"> 
             <tbody>
@@ -317,10 +315,9 @@
                                                    <g:message code="surveyManifiesto.ultimoShowVentas.label" default="Ultimo Show Ventas" />
 
                                            </label>
-                                           <!--g:datePicker name="ultimoShowVentas" precision="day"  value="${surveyManifiestoInstance?.ultimoShowVentas}" default="none" noSelection="['': '']" /-->
-                                           <g:datePicker name="ultimoShowVentas" value="${surveyManifiestoInstance?.ultimoShowVentas}" default="none" precision="day"  noSelection="['':'-Choose-']" relativeYears="[-2..7]"/>
-
-                                           <!--input type="text" id="ultimoShowVentas" name="ultimoShowVentas" value="${surveyManifiestoInstance?.ultimoShowVentas}"/-->
+                                            
+                                           <g:datePicker name="ultimoShowVentas" value="${surveyManifiestoInstance?.ultimoShowVentas}" default="none" precision="day"  noSelection="['':'-Choose-']" relativeYears="[-20..7]"/>
+                                           <!--<input type="text" id="ultimoShowVentas" name="ultimoShowVentas" value="${surveyManifiestoInstance?.ultimoShowVentas}"/>-->
                                    </div>
                                </td>
                                <td>

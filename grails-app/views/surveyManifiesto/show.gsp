@@ -16,12 +16,24 @@
                                             }
                                             window.opener.location.replace(ruta)
                                             }
+                                            
+                                      </script>
+                                      <script type="text/javascript">
+                                                function borrar(){
+                                                        alert('The survey will be deleted - El survey sera eliminado')
+                                                        var ruta = window.opener.location.href
+                                            if(window.close){
+                                                        window.close();                                            
+                                                        window.opener.location.replace(ruta)
+                                            }
+                                            window.opener.location.replace(ruta)
+                                            }
                                       </script>
 	</head>
 <body>
 <div class="container">
 <div class="container" id="form_survey">
-         <h1><g:message code="confirmardatos.label" default="Confirmar datos Guardados" /></h1><br>
+         <h1><g:message code="mostrardatos.label" default="Mostrar datos de Survey" /></h1><br>
           <table class="table table-bordered" style="width: auto;"> 
             <tbody>
                    <div class="fieldcontain ${hasErrors(bean: surveyManifiestoInstance, field: 'idmanifiesto', 'error')} required">
@@ -398,7 +410,7 @@
               <g:form url="[resource:surveyManifiestoInstance, action:'delete']" method="DELETE">
 				<fieldset class="buttons">
 					<g:link class="edit" action="edit" resource="${surveyManifiestoInstance}"><g:message code="default.button.edit.label" default="Edit" /></g:link>
-					<g:actionSubmit class="delete" action="delete" value="${message(code: 'default.button.delete.label', default: 'Delete')}" onclick="return confirm('${message(code: 'default.button.delete.confirm.message', default: 'Are you sure?')}');" />
+					<g:actionSubmit  class="delete" action="delete" value="${message(code: 'default.button.delete.label', default: 'Delete')}" onclick="borrar();" />
                                                                                               <button class="btns btns-closewindow" type="button" onclick="cerrar();"><g:message code="closewindow.label" default="Cerrar Ventana" /></button> 
 				</fieldset>
               </g:form>
