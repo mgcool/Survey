@@ -1,7 +1,5 @@
 package survey
 
-
-
 import static org.springframework.http.HttpStatus.*
 import grails.transaction.Transactional
 
@@ -70,15 +68,11 @@ class SurveyManifiestoController {
     
      @Transactional
     def save(SurveyManifiesto surveyManifiestoInstance) {
+        
         if (surveyManifiestoInstance == null) {
             notFound()
             return
         }
-        
-        //if (params.ultimoShowVentas){
-        //    params.ultimoShowVentas = Date.parse('dd/MM/yyyy', params.ultimoShowVentas)
-        //    println(params.ultimoShowVentas)
-        //}
         
         if (surveyManifiestoInstance.hasErrors()) {
             respond surveyManifiestoInstance.errors, view:'create'
@@ -102,12 +96,7 @@ class SurveyManifiestoController {
             notFound()
             return
         }
-        
-        //if (params.ultimoShowVentas){
-        //    params.ultimoShowVentas = Date.parse('dd/MM/yyyy', params.ultimoShowVentas)
-        //}
-        
-        
+
         if (surveyManifiestoInstance.hasErrors()) {
             respond surveyManifiestoInstance.errors, view:'edit'
             return
@@ -137,7 +126,7 @@ class SurveyManifiestoController {
         request.withFormat {
             form multipartForm {
                 flash.message = message(code: 'default.deleted.message', args: [message(code: 'SurveyManifiesto.label', default: 'SurveyManifiesto'), surveyManifiestoInstance.id])
-                redirect action:"index", method:"GET"
+                redirect controller:"View_SurveyManifiesto", action:"index", method:"GET"
             }
             '*'{ render status: NO_CONTENT }
         }

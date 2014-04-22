@@ -62,4 +62,5 @@ class SurveyManifiesto {
         porqueNo                (blank: true, nullable: true)
         opinion                (blank: true, nullable: true)
     }
+
 }

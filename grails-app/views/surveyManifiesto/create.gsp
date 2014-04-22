@@ -4,6 +4,7 @@
 		<meta name="layout" content="main_survey">
 		<g:set var="entityName" value="${message(code: 'surveyManifiesto.label', default: 'SurveyManifiesto')}" />
 		<title><g:message code="default.create.label" args="[entityName]" /></title>
+                
                     </head>
 	<body>
                             <div class="container">
