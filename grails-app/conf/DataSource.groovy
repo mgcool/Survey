@@ -1,10 +1,10 @@
-dataSource {
-    pooled = true
-    jmxExport = true
-    driverClassName = "org.h2.Driver"
-    username = "sa"
-    password = ""
-}
+//dataSource {
+//    pooled = true
+//    jmxExport = true
+//    driverClassName = "org.h2.Driver"
+//    username = "sa"
+//    password = ""
+//}
 hibernate {
     cache.use_second_level_cache = true
     cache.use_query_cache = false
@@ -43,8 +43,13 @@ environments {
     }
     production {
         dataSource {
-            dbCreate = "update"
-            url = "jdbc:h2:prodDb;MVCC=TRUE;LOCK_TIMEOUT=10000;DB_CLOSE_ON_EXIT=FALSE"
+            dialect = org.hibernate.dialect.OracleDialect
+            driverClassName = 'oracle.jdbc.OracleDriver'
+            dbCreate = 'update'
+            username = 'sunset'
+            password = 'SUN010302SIR'
+            //url = 'jdbc:oracle:thin:@10.194.15.203:1521:SUNSET'
+            url = 'jdbc:oracle:thin:@10.194.18.59:1521:SUNSET'
             properties {
                // See http://grails.org/doc/latest/guide/conf.html#dataSource for documentation
                jmxEnabled = true
