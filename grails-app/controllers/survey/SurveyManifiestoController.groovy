@@ -126,7 +126,7 @@ class SurveyManifiestoController {
         request.withFormat {
             form multipartForm {
                 flash.message = message(code: 'default.deleted.message', args: [message(code: 'SurveyManifiesto.label', default: 'SurveyManifiesto'), surveyManifiestoInstance.id])
-                redirect action:"index", method:"GET"
+                redirect controller:"View_SurveyManifiesto", action:"index", method:"GET"
             }
             '*'{ render status: NO_CONTENT }
         }

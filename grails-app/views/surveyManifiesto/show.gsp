@@ -410,8 +410,8 @@
               <g:form url="[resource:surveyManifiestoInstance, action:'delete']" method="DELETE">
 				<fieldset class="buttons">
 					<g:link class="edit" action="edit" resource="${surveyManifiestoInstance}"><g:message code="default.button.edit.label" default="Edit" /></g:link>
-					<g:actionSubmit  class="delete" action="delete" value="${message(code: 'default.button.delete.label', default: 'Delete')}" onclick="borrar();" />
-                                                                                              <button class="btns btns-closewindow" type="button" onclick="cerrar();"><g:message code="closewindow.label" default="Cerrar Ventana" /></button> 
+					<g:actionSubmit  class="delete" action="delete" value="${message(code: 'default.button.delete.label', default: 'Delete')}"  />
+                                        <button class="btns btns-closewindow" type="button" onclick="cerrar();"><g:message code="closewindow.label" default="Cerrar Ventana" /></button> 
 				</fieldset>
               </g:form>
  </div>    
